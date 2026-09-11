@@ -1,0 +1,764 @@
+{
+  "Attack on Titan": {
+    "rus": "Атака титанов",
+    "eng": "Shingeki no Kyojin",
+    "poster": "https://shikimori.one/system/animes/original/16498.jpg?1711973439",
+    "source": "shikimori",
+    "score": "8.58",
+    "shikimori_id": 16498
+  },
+  "BLUELOCK": {
+    "rus": "BLUELOCK",
+    "eng": "BLUELOCK",
+    "poster": "",
+    "source": "fallback"
+  },
+  "BlackâRock Shooter (OVA)": {
+    "rus": "Весёлый Мэндодо",
+    "eng": "Kuaile Meng Duo Duo",
+    "poster": "https://shikimori.one/system/animes/original/46695.jpg?1711959952",
+    "source": "shikimori",
+    "score": "0.0",
+    "shikimori_id": 46695
+  },
+  "Busamen Gachi Fighter": {
+    "rus": "Всё тот же невзрачный боец",
+    "eng": "Busamen Gachi Fighter",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "source": "shikimori",
+    "score": "6.3",
+    "shikimori_id": 60316
+  },
+  "Chainsaw Man": {
+    "rus": "Человек-бензопила",
+    "eng": "Chainsaw Man",
+    "poster": "https://shikimori.one/system/animes/original/44511.jpg?1711945574",
+    "source": "shikimori",
+    "score": "8.42",
+    "shikimori_id": 44511
+  },
+  "Charlotte": {
+    "rus": "Шарлотта",
+    "eng": "Charlotte",
+    "poster": "https://shikimori.one/system/animes/original/28999.jpg?1711945851",
+    "source": "shikimori",
+    "score": "7.76",
+    "shikimori_id": 28999
+  },
+  "Charlotte Tsuyoimono-tachi": {
+    "rus": "Шарлотта: Сильные люди",
+    "eng": "Charlotte: Tsuyoimono-tachi",
+    "poster": "https://shikimori.one/system/animes/original/31553.jpg?1711945826",
+    "source": "shikimori",
+    "score": "7.5",
+    "shikimori_id": 31553
+  },
+  "CodeRealize Sousei no Himegimi": {
+    "rus": "Страж перерождения",
+    "eng": "Code:Realize - Sousei no Himegimi",
+    "poster": "https://shikimori.one/system/animes/original/31456.jpg?1711946580",
+    "source": "shikimori",
+    "score": "6.67",
+    "shikimori_id": 31456
+  },
+  "Enen no Shouboutai": {
+    "rus": "Пламенная бригада пожарных",
+    "eng": "Enen no Shouboutai",
+    "poster": "https://shikimori.one/system/animes/original/38671.jpg?1711948922",
+    "source": "shikimori",
+    "score": "7.72",
+    "shikimori_id": 38671
+  },
+  "Enen no Shouboutai Ni no Shou": {
+    "rus": "Пламенная бригада пожарных: Вторая глава",
+    "eng": "Enen no Shouboutai: Ni no Shou",
+    "poster": "https://shikimori.one/system/animes/original/40956.jpg?1711948877",
+    "source": "shikimori",
+    "score": "7.82",
+    "shikimori_id": 40956
+  },
+  "Fairy Tail Final Series": {
+    "rus": "Хвост Феи: Финал",
+    "eng": "Fairy Tail: Final Series",
+    "poster": "https://shikimori.one/system/animes/original/35972.jpg?1711949100",
+    "source": "shikimori",
+    "score": "7.62",
+    "shikimori_id": 35972
+  },
+  "Fairy Tail Movie 2 Dragon Cry": {
+    "rus": "Хвост Феи: Плач дракона",
+    "eng": "Fairy Tail Movie 2: Dragon Cry",
+    "poster": "https://shikimori.one/system/animes/original/30778.jpg?1711949118",
+    "source": "shikimori",
+    "score": "7.56",
+    "shikimori_id": 30778
+  },
+  "Fairy Tail TV-2": {
+    "rus": "Хвост Феи (2014)",
+    "eng": "Fairy Tail (2014)",
+    "poster": "https://shikimori.one/system/animes/original/22043.jpg?1711949129",
+    "source": "shikimori",
+    "score": "7.66",
+    "shikimori_id": 22043
+  },
+  "FateApocrypha": {
+    "rus": "FateApocrypha",
+    "eng": "FateApocrypha",
+    "poster": "",
+    "source": "fallback"
+  },
+  "FateExtra Last Encore": {
+    "rus": "Судьба/Дополнение: Последний вызов на бис",
+    "eng": "Fate/Extra: Last Encore",
+    "poster": "https://shikimori.one/system/animes/original/33047.jpg?1711949158",
+    "source": "shikimori",
+    "score": "6.31",
+    "shikimori_id": 33047
+  },
+  "FateGrand Order First Order": {
+    "rus": "Судьба/Великий приказ: Первый приказ",
+    "eng": "Fate/Grand Order: First Order",
+    "poster": "https://shikimori.one/system/animes/original/34321.jpg?1711949185",
+    "source": "shikimori",
+    "score": "6.73",
+    "shikimori_id": 34321
+  },
+  "Fatestay night  Heaven&#039;s Feel I. Presage Flower": {
+    "rus": "Судьба/Ночь схватки: Прикосновение небес",
+    "eng": "Fate/stay night Movie: Heaven's Feel - I. Presage Flower",
+    "poster": "https://shikimori.one/system/animes/original/25537.jpg?1711949289",
+    "source": "shikimori",
+    "score": "8.14",
+    "shikimori_id": 25537
+  },
+  "Fatestay night Movie Heaven&#039;s Feel - II. Lost Butterfly": {
+    "rus": "Судьба/Ночь схватки: Прикосновение небес 2",
+    "eng": "Fate/stay night Movie: Heaven's Feel - II. Lost Butterfly",
+    "poster": "https://shikimori.one/system/animes/original/33049.jpg?1711949246",
+    "source": "shikimori",
+    "score": "8.46",
+    "shikimori_id": 33049
+  },
+  "Fatestay night Movie Heaven's Feel - III. Spring Song": {
+    "rus": "Судьба/Ночь схватки: Прикосновение небес 3",
+    "eng": "Fate/stay night Movie: Heaven's Feel - III. Spring Song",
+    "poster": "https://shikimori.one/system/animes/original/33050.jpg?1711949281",
+    "source": "shikimori",
+    "score": "8.63",
+    "shikimori_id": 33050
+  },
+  "Fatestay night Unlimited Blade Works": {
+    "rus": "Судьба/Ночь схватки: Бесконечный мир клинков. Фильм",
+    "eng": "Fate/stay night Movie: Unlimited Blade Works",
+    "poster": "https://shikimori.one/system/animes/original/6922.jpg?1711949246",
+    "source": "shikimori",
+    "score": "7.4",
+    "shikimori_id": 6922
+  },
+  "Fuuka": {
+    "rus": "Фука",
+    "eng": "Fuuka",
+    "poster": "https://shikimori.one/system/animes/original/33743.jpg?1711949982",
+    "source": "shikimori",
+    "score": "6.51",
+    "shikimori_id": 33743
+  },
+  "Genjitsu Shugi Yuusha no Oukoku Saikenki": {
+    "rus": "Герой-рационал перестраивает королевство",
+    "eng": "Genjitsu Shugi Yuusha no Oukoku Saikenki",
+    "poster": "https://shikimori.one/system/animes/original/41710.jpg?1711950728",
+    "source": "shikimori",
+    "score": "7.25",
+    "shikimori_id": 41710
+  },
+  "Genjitsu Shugi Yuusha no Oukoku Saikenki Part 2": {
+    "rus": "Герой-рационал перестраивает королевство. Часть 2",
+    "eng": "Genjitsu Shugi Yuusha no Oukoku Saikenki Part 2",
+    "poster": "https://shikimori.one/system/animes/original/49930.jpg?1706499110",
+    "source": "shikimori",
+    "score": "7.42",
+    "shikimori_id": 49930
+  },
+  "Golden Time": {
+    "rus": "Золотая пора",
+    "eng": "Golden Time",
+    "poster": "https://shikimori.one/system/animes/original/17895.jpg?1711951640",
+    "source": "shikimori",
+    "score": "7.74",
+    "shikimori_id": 17895
+  },
+  "Hazure Skill Kinomi Master Skill no Mi (Tabetara Shinu) wo Mugen ni Taberareru You ni Natta Ken ni Tsuite": {
+    "rus": "Парадоксальный навык «Мастер фруктов»: Навык, позволяющий есть бесконечное число фруктов (правда, вы умрёте, лишь откусив их): Мини-аниме",
+    "eng": "Hazure Skill \"Kinomi Master\": Skill no Mi (Tabetara Shinu) wo Mugen ni Taberareru You ni Natta Ken ni Tsuite Mini Anime",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "source": "shikimori",
+    "score": "5.81",
+    "shikimori_id": 61534
+  },
+  "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu": {
+    "rus": "Королева, ставшая причиной трагедии, сделает для народа всё, что в её силах",
+    "eng": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu.",
+    "poster": "https://shikimori.one/system/animes/original/53438.jpg?1710730283",
+    "source": "shikimori",
+    "score": "7.12",
+    "shikimori_id": 53438
+  },
+  "Highschool of the Dead": {
+    "rus": "Школа мертвецов",
+    "eng": "Highschool of the Dead",
+    "poster": "https://shikimori.one/system/animes/original/8074.jpg?1711953602",
+    "source": "shikimori",
+    "score": "7.06",
+    "shikimori_id": 8074
+  },
+  "Kabushikigaisha Magi-LumiÃ¨re": {
+    "rus": "Записи о магии: Девочка-волшебница Мадока★Волшебство — Гайдэн 2. В преддверии пробуждения",
+    "eng": "Magia Record: Mahou Shoujo Madoka☆Magica Gaiden 2nd Season - Kakusei Zenya Recap",
+    "poster": "https://shikimori.one/system/animes/original/49848.jpg?1706499110",
+    "source": "shikimori",
+    "score": "6.18",
+    "shikimori_id": 49848
+  },
+  "Kara no Kyoukai 1 Fukan Fuukei": {
+    "rus": "Граница пустоты 1: Вид с высоты",
+    "eng": "Kara no Kyoukai Movie 1: Fukan Fuukei",
+    "poster": "https://shikimori.one/system/animes/original/2593.jpg?1711957622",
+    "source": "shikimori",
+    "score": "7.55",
+    "shikimori_id": 2593
+  },
+  "Kara no Kyoukai 2 Satsujin Kousatsu (Zen)": {
+    "rus": "Граница пустоты 2: Теория убийства  — Часть 1",
+    "eng": "Kara no Kyoukai Movie 2: Satsujin Kousatsu (Zen)",
+    "poster": "https://shikimori.one/system/animes/original/3782.jpg?1711957652",
+    "source": "shikimori",
+    "score": "7.75",
+    "shikimori_id": 3782
+  },
+  "Kara no Kyoukai 3 Tsuukaku Zanryuu": {
+    "rus": "Граница пустоты 3: Оставшееся чувство боли",
+    "eng": "Kara no Kyoukai Movie 3: Tsuukaku Zanryuu",
+    "poster": "https://shikimori.one/system/animes/original/3783.jpg?1711957693",
+    "source": "shikimori",
+    "score": "8.0",
+    "shikimori_id": 3783
+  },
+  "Kara no Kyoukai 4 Garan no Dou": {
+    "rus": "Граница пустоты 4: Храм пустоты",
+    "eng": "Kara no Kyoukai Movie 4: Garan no Dou",
+    "poster": "https://shikimori.one/system/animes/original/4280.jpg?1711957638",
+    "source": "shikimori",
+    "score": "7.81",
+    "shikimori_id": 4280
+  },
+  "Kara no Kyoukai 5 Mujun Rasen": {
+    "rus": "Граница пустоты 5: Спираль парадокса",
+    "eng": "Kara no Kyoukai Movie 5: Mujun Rasen",
+    "poster": "https://shikimori.one/system/animes/original/4282.jpg?1711957609",
+    "source": "shikimori",
+    "score": "8.5",
+    "shikimori_id": 4282
+  },
+  "Kara no Kyoukai 6 Boukyaku Rokuon": {
+    "rus": "Граница пустоты 6: Мелодия забвения",
+    "eng": "Kara no Kyoukai Movie 6: Boukyaku Rokuon",
+    "poster": "https://shikimori.one/system/animes/original/5204.jpg?1711957669",
+    "source": "shikimori",
+    "score": "7.43",
+    "shikimori_id": 5204
+  },
+  "Kara no Kyoukai 7 Satsujin Kousatsu (Go)": {
+    "rus": "Граница пустоты 7: Теория убийства — Часть 2",
+    "eng": "Kara no Kyoukai Movie 7: Satsujin Kousatsu (Go)",
+    "poster": "https://shikimori.one/system/animes/original/5205.jpg?1711957665",
+    "source": "shikimori",
+    "score": "8.36",
+    "shikimori_id": 5205
+  },
+  "Kara no Kyoukai 8 Shuushou": {
+    "rus": "Граница пустоты 8: Эпилог",
+    "eng": "Kara no Kyoukai Movie 8: Shuushou",
+    "poster": "https://shikimori.one/system/animes/original/6954.jpg?1711957617",
+    "source": "shikimori",
+    "score": "7.22",
+    "shikimori_id": 6954
+  },
+  "Kara no Kyoukai Movie Mirai Fukuin": {
+    "rus": "Граница пустоты: Благословение будущего",
+    "eng": "Kara no Kyoukai Movie: Mirai Fukuin",
+    "poster": "https://shikimori.one/system/animes/original/14807.jpg?1711957654",
+    "source": "shikimori",
+    "score": "7.98",
+    "shikimori_id": 14807
+  },
+  "Kara no Kyoukai Movie Mirai Fukuin - Extra Chorus": {
+    "rus": "Граница пустоты: Благословение будущего — Дополнительная глава",
+    "eng": "Kara no Kyoukai Movie: Mirai Fukuin - Extra Chorus",
+    "poster": "https://shikimori.one/system/animes/original/22763.jpg?1711957642",
+    "source": "shikimori",
+    "score": "7.44",
+    "shikimori_id": 22763
+  },
+  "Kiniro no Corda BlueâªSky": {
+    "rus": "Золотая струна: Летний вызов на бис",
+    "eng": "Kiniro no Corda: Primo Passo - Hitonatsu no Encore",
+    "poster": "https://shikimori.one/system/animes/original/3392.jpg?1711958782",
+    "source": "shikimori",
+    "score": "7.43",
+    "shikimori_id": 3392
+  },
+  "Kokoro Connect": {
+    "rus": "Связь сердец",
+    "eng": "Kokoro Connect",
+    "poster": "https://shikimori.one/system/animes/original/11887.jpg?1711959319",
+    "source": "shikimori",
+    "score": "7.72",
+    "shikimori_id": 11887
+  },
+  "Kono Oto Tomare!": {
+    "rus": "Задержи этот звук!",
+    "eng": "Kono Oto Tomare!",
+    "poster": "https://shikimori.one/system/animes/original/38080.jpg?1711959580",
+    "source": "shikimori",
+    "score": "7.94",
+    "shikimori_id": 38080
+  },
+  "Kono Subarashii Sekai ni Shukufuku wo! 2": {
+    "rus": "Этот замечательный мир! 2",
+    "eng": "Kono Subarashii Sekai ni Shukufuku wo! 2",
+    "poster": "https://shikimori.one/system/animes/original/32937.jpg?1711959560",
+    "source": "shikimori",
+    "score": "8.24",
+    "shikimori_id": 32937
+  },
+  "Kono Subarashii Sekai ni Shukufuku wo! 2 OVA": {
+    "rus": "Этот замечательный мир! 2",
+    "eng": "Kono Subarashii Sekai ni Shukufuku wo! 2",
+    "poster": "https://shikimori.one/system/animes/original/32937.jpg?1711959560",
+    "source": "shikimori",
+    "score": "8.24",
+    "shikimori_id": 32937
+  },
+  "Kono Subarashii Sekai ni Shukufuku wo! Kurenai Densetsu": {
+    "rus": "Этот замечательный мир! Багровая легенда",
+    "eng": "Kono Subarashii Sekai ni Shukufuku wo! Movie: Kurenai Densetsu",
+    "poster": "https://shikimori.one/system/animes/original/38040.jpg?1711959620",
+    "source": "shikimori",
+    "score": "8.4",
+    "shikimori_id": 38040
+  },
+  "Kono Subarashii Sekai ni Shukufuku wo! OVA": {
+    "rus": "Этот замечательный мир!",
+    "eng": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "poster": "https://shikimori.one/system/animes/original/30831.jpg?1711959601",
+    "source": "shikimori",
+    "score": "8.09",
+    "shikimori_id": 30831
+  },
+  "Magia Record Mahou Shoujo MadokaâMagica Gaiden 2nd Season": {
+    "rus": "Записи о магии: Девочка-волшебница Мадока★Волшебство — Гайдэн 2",
+    "eng": "Magia Record: Mahou Shoujo Madoka☆Magica Gaiden 2nd Season - Kakusei Zenya",
+    "poster": "https://shikimori.one/system/animes/original/41530.jpg?1711962152",
+    "source": "shikimori",
+    "score": "7.05",
+    "shikimori_id": 41530
+  },
+  "Mahou Shoujo MadokaâMagica": {
+    "rus": "Лиричная волшебница Наноха: Спецвыпуск",
+    "eng": "Mahou Shoujo Lyrical Nanoha Picture Drama",
+    "poster": "https://shikimori.one/system/animes/original/35501.jpg?1711962295",
+    "source": "shikimori",
+    "score": "5.8",
+    "shikimori_id": 35501
+  },
+  "Mahou Shoujo MadokaâMagica Movie 3": {
+    "rus": "Девочка-волшебница Мадока★Волшебный фильм 3: История восстания",
+    "eng": "Mahou Shoujo Madoka★Magica Movie 3: Hangyaku no Monogatari",
+    "poster": "https://shikimori.one/system/animes/original/11981.jpg?1711962325",
+    "source": "shikimori",
+    "score": "8.51",
+    "shikimori_id": 11981
+  },
+  "Mahou Shoujo ni Akogarete": {
+    "rus": "Становясь волшебницей",
+    "eng": "Mahou Shoujo ni Akogarete",
+    "poster": "https://shikimori.one/system/animes/original/54722.jpg?1718587270",
+    "source": "shikimori",
+    "score": "7.6",
+    "shikimori_id": 54722
+  },
+  "Mugen Gacha": {
+    "rus": "Я был предан товарищами в глубине подземелья, но благодаря своему навыку «Бесконечная гача» я обрёл союзников девять тысяч девятьсот девяносто девятого уровня, чтобы отомстить бывшим соратникам и всему миру!",
+    "eng": "Shinjiteita Nakama-tachi ni Dungeon Okuchi de Korosarekaketa ga Gift \"Mugen Gacha\" de Level 9999 no Nakama-tachi wo Te ni Irete Moto Party Member to Sekai ni Fukushuu & \"Zamaa!\" Shimasu!",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "source": "shikimori",
+    "score": "7.07",
+    "shikimori_id": 60303
+  },
+  "Nanatsu no Taizai Imashime no Fukkatsu": {
+    "rus": "Семь смертных грехов: Возрождение заповедей",
+    "eng": "Nanatsu no Taizai: Imashime no Fukkatsu",
+    "poster": "https://shikimori.one/system/animes/original/34577.jpg?1711965527",
+    "source": "shikimori",
+    "score": "7.52",
+    "shikimori_id": 34577
+  },
+  "Nanatsu no Taizai Movie Tenkuu no Torawarebito": {
+    "rus": "Семь смертных грехов: Узники небес",
+    "eng": "Nanatsu no Taizai Movie 1: Tenkuu no Torawarebito",
+    "poster": "https://shikimori.one/system/animes/original/35946.jpg?1711965553",
+    "source": "shikimori",
+    "score": "7.08",
+    "shikimori_id": 35946
+  },
+  "Nanatsu no Taizai Seisen no Shirushi": {
+    "rus": "Семь смертных грехов: Знамение священной войны",
+    "eng": "Nanatsu no Taizai: Seisen no Shirushi",
+    "poster": "https://shikimori.one/system/animes/original/31722.jpg?1711965569",
+    "source": "shikimori",
+    "score": "6.94",
+    "shikimori_id": 31722
+  },
+  "NieRAutomata Ver1.1a": {
+    "rus": "Ниер: Автомата — Версия 1.1а",
+    "eng": "NieR: Automata Ver 1.1a",
+    "poster": "https://shikimori.one/system/animes/original/51105.jpg?1718592170",
+    "source": "shikimori",
+    "score": "7.56",
+    "shikimori_id": 51105
+  },
+  "NieRAutomata Ver1.1a Part 2": {
+    "rus": "Ниер: Автомата — Версия 1.1а. Часть 2",
+    "eng": "NieR:Automata Ver1.1a Part 2",
+    "poster": "https://shikimori.one/system/animes/original/56063.jpg?1713933961",
+    "source": "shikimori",
+    "score": "8.06",
+    "shikimori_id": 56063
+  },
+  "Ninja to Gokudou": {
+    "rus": "Ниндзя и якудза",
+    "eng": "Ninja to Gokudou",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "source": "shikimori",
+    "score": "6.39",
+    "shikimori_id": 61067
+  },
+  "Paradox Live the Animation": {
+    "rus": "Парадокс в прямом эфире",
+    "eng": "Paradox Live the Animation",
+    "poster": "https://shikimori.one/system/animes/original/51956.jpg?1710733703",
+    "source": "shikimori",
+    "score": "6.87",
+    "shikimori_id": 51956
+  },
+  "PÃ³Å Wieku Poezji PÃ³Åºniej": {
+    "rus": "Pa-Pa-Pa the ★ Movie: Perman - Tako de Pon! Ashi wa Pon!",
+    "eng": "Pa-Pa-Pa the ★ Movie: Perman - Tako de Pon! Ashi wa Pon!",
+    "poster": "https://shikimori.one/system/animes/original/29611.jpg?1711968303",
+    "source": "shikimori",
+    "score": "6.56",
+    "shikimori_id": 29611
+  },
+  "Ranma 12 (2024)": {
+    "rus": "Ранма 1/2 (2024)",
+    "eng": "Ranma ½ (2024)",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "source": "shikimori",
+    "score": "7.96",
+    "shikimori_id": 59145
+  },
+  "Ranma 12 (2024) 2": {
+    "rus": "Ранма 1/2 (2024) 2",
+    "eng": "Ranma ½ (2024) 2nd Season",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "source": "shikimori",
+    "score": "7.74",
+    "shikimori_id": 60564
+  },
+  "ReCreators": {
+    "rus": "ReCreators",
+    "eng": "ReCreators",
+    "poster": "",
+    "source": "fallback"
+  },
+  "ReZero kara Hajimeru Isekai Seikatsu - Memory Snow": {
+    "rus": "Re:Zero. Жизнь с нуля в альтернативном мире: Снежные воспоминания",
+    "eng": "Re:Zero kara Hajimeru Isekai Seikatsu - Memory Snow",
+    "poster": "https://shikimori.one/system/animes/original/36286.jpg?1711970112",
+    "source": "shikimori",
+    "score": "7.58",
+    "shikimori_id": 36286
+  },
+  "ReZero kara Hajimeru Isekai Seikatsu 2nd Season": {
+    "rus": "Re:Zero. Жизнь с нуля в альтернативном мире 2",
+    "eng": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+    "poster": "https://shikimori.one/system/animes/original/39587.jpg?1711970115",
+    "source": "shikimori",
+    "score": "8.33",
+    "shikimori_id": 39587
+  },
+  "ReZero kara Hajimeru Isekai Seikatsu 3 Season": {
+    "rus": "Re:Zero. Жизнь с нуля в альтернативном мире 3",
+    "eng": "Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season",
+    "poster": "https://shikimori.one/system/animes/original/54857.jpg?1711421151",
+    "source": "shikimori",
+    "score": "8.42",
+    "shikimori_id": 54857
+  },
+  "SKâ": {
+    "rus": "Фигурный калейдоскоп",
+    "eng": "Ginban Kaleidoscope",
+    "poster": "https://shikimori.one/system/animes/original/476.jpg?1711951103",
+    "source": "shikimori",
+    "score": "7.31",
+    "shikimori_id": 476
+  },
+  "Saiki Kusuo no Î¨-nan Kanketsu-hen": {
+    "rus": "Ох уж этот экстрасенс Сайки Кусуо! Финал",
+    "eng": "Saiki Kusuo no Ψ-nan: Kanketsu-hen",
+    "poster": "https://shikimori.one/system/animes/original/38249.jpg?1711971531",
+    "source": "shikimori",
+    "score": "8.21",
+    "shikimori_id": 38249
+  },
+  "Shingeki no Kyojin Kuinaki Sentaku": {
+    "rus": "Атака титанов: Выбор без сожалений",
+    "eng": "Shingeki no Kyojin: Kuinaki Sentaku",
+    "poster": "https://shikimori.one/system/animes/original/25781.jpg?1711973510",
+    "source": "shikimori",
+    "score": "8.42",
+    "shikimori_id": 25781
+  },
+  "Shingeki no Kyojin Lost Girls": {
+    "rus": "Атака титанов: Потерянные девушки",
+    "eng": "Shingeki no Kyojin: Lost Girls",
+    "poster": "https://shikimori.one/system/animes/original/36106.jpg?1711973469",
+    "source": "shikimori",
+    "score": "7.83",
+    "shikimori_id": 36106
+  },
+  "Shingeki no Kyojin Season 2": {
+    "rus": "Атака титанов 2",
+    "eng": "Shingeki no Kyojin Season 2",
+    "poster": "https://shikimori.one/system/animes/original/25777.jpg?1711973455",
+    "source": "shikimori",
+    "score": "8.54",
+    "shikimori_id": 25777
+  },
+  "Shingeki no Kyojin Season 3  Part 1": {
+    "rus": "Атака титанов 3. Часть 2",
+    "eng": "Shingeki no Kyojin Season 3 Part 2",
+    "poster": "https://shikimori.one/system/animes/original/38524.jpg?1711973463",
+    "source": "shikimori",
+    "score": "9.05",
+    "shikimori_id": 38524
+  },
+  "Shingeki no Kyojin Season 3 Part 2": {
+    "rus": "Атака титанов 3. Часть 2",
+    "eng": "Shingeki no Kyojin Season 3 Part 2",
+    "poster": "https://shikimori.one/system/animes/original/38524.jpg?1711973463",
+    "source": "shikimori",
+    "score": "9.05",
+    "shikimori_id": 38524
+  },
+  "Shingeki no Kyojin The Final Season": {
+    "rus": "Атака титанов: Финал",
+    "eng": "Shingeki no Kyojin: The Final Season",
+    "poster": "https://shikimori.one/system/animes/original/40028.jpg?1711973445",
+    "source": "shikimori",
+    "score": "8.79",
+    "shikimori_id": 40028
+  },
+  "ShoujoâKageki Revue Starlight": {
+    "rus": "Девичья опера: Свет ревю",
+    "eng": "Shoujo☆Kageki Revue Starlight",
+    "poster": "https://shikimori.one/system/animes/original/35503.jpg?1711974021",
+    "source": "shikimori",
+    "score": "7.67",
+    "shikimori_id": 35503
+  },
+  "Shouwa Genroku Rakugo Shinjuu": {
+    "rus": "Сёва-Гэнроку: Двойное самоубийство по ракуго",
+    "eng": "Shouwa Genroku Rakugo Shinjuu",
+    "poster": "https://shikimori.one/system/animes/original/28735.jpg?1711974112",
+    "source": "shikimori",
+    "score": "8.54",
+    "shikimori_id": 28735
+  },
+  "Shouwa Genroku Rakugo Shinjuu Sukeroku Futatabi-hen": {
+    "rus": "Сёва-Гэнроку: Двойное самоубийство по ракуго 2",
+    "eng": "Shouwa Genroku Rakugo Shinjuu: Sukeroku Futatabi-hen",
+    "poster": "https://shikimori.one/system/animes/original/33095.jpg?1711974122",
+    "source": "shikimori",
+    "score": "8.69",
+    "shikimori_id": 33095
+  },
+  "Shuumatsu no WalkÃ¼re": {
+    "rus": "Подставную дворянку спасла любовь безжалостного ледяного принца",
+    "eng": "Migawari Reijou wo Sukutta no wa Reikoku Mujihi na Koori no Ouji no Ai deshita",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "source": "shikimori",
+    "score": "5.57",
+    "shikimori_id": 63878
+  },
+  "Shuumatsu no WalkÃ¼re 2": {
+    "rus": "Повесть о конце света 2. Часть 2",
+    "eng": "Shuumatsu no Walküre II Part 2",
+    "poster": "https://shikimori.one/system/animes/original/55454.jpg?1716771013",
+    "source": "shikimori",
+    "score": "7.55",
+    "shikimori_id": 55454
+  },
+  "Shuumatsu no WalkÃ¼re III": {
+    "rus": "Некогда вечный 3: Общие грёзы",
+    "eng": "Towa no Quon 3: Mugen no Renza",
+    "poster": "https://shikimori.one/system/animes/original/10714.jpg?1711978350",
+    "source": "shikimori",
+    "score": "7.39",
+    "shikimori_id": 10714
+  },
+  "Super Crooks": {
+    "rus": "Суперворы",
+    "eng": "Super Crooks",
+    "poster": "https://shikimori.one/system/animes/original/48453.jpg?1708766438",
+    "source": "shikimori",
+    "score": "7.21",
+    "shikimori_id": 48453
+  },
+  "Tensei Shitara Slime Datta Ken 2 Part 1": {
+    "rus": "О моём перерождении в слизь 2. Часть 2",
+    "eng": "Tensei shitara Slime Datta Ken 2nd Season Part 2",
+    "poster": "https://shikimori.one/system/animes/original/41487.jpg?1711977051",
+    "source": "shikimori",
+    "score": "8.29",
+    "shikimori_id": 41487
+  },
+  "Tensei Shitara Slime Datta Ken 2nd Season Part 2": {
+    "rus": "О моём перерождении в слизь 2. Часть 2",
+    "eng": "Tensei shitara Slime Datta Ken 2nd Season Part 2",
+    "poster": "https://shikimori.one/system/animes/original/41487.jpg?1711977051",
+    "source": "shikimori",
+    "score": "8.29",
+    "shikimori_id": 41487
+  },
+  "Tensei Shitara Slime Datta Ken Coleus no Yume": {
+    "rus": "О моём перерождении в слизь: Мечта Колеуса",
+    "eng": "Tensei shitara Slime Datta Ken: Coleus no Yume",
+    "poster": "https://shikimori.one/system/animes/original/54565.jpg?1716771883",
+    "source": "shikimori",
+    "score": "7.58",
+    "shikimori_id": 54565
+  },
+  "Tensei Shitara Slime Datta Ken Guren no Kizuna-hen": {
+    "rus": "О моём перерождении в слизь: Алые узы",
+    "eng": "Tensei shitara Slime Datta Ken Movie: Guren no Kizuna-hen",
+    "poster": "https://shikimori.one/system/animes/original/49877.jpg?1709524281",
+    "source": "shikimori",
+    "score": "7.63",
+    "shikimori_id": 49877
+  },
+  "Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu": {
+    "rus": "Перевоплотился в седьмого принца, так что я буду совершенствовать свою магию, как захочу",
+    "eng": "Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu",
+    "poster": "https://shikimori.one/system/animes/original/53516.jpg?1718207142",
+    "source": "shikimori",
+    "score": "7.4",
+    "shikimori_id": 53516
+  },
+  "Tensei shitara Slime Datta Ken 3rd Season": {
+    "rus": "О моём перерождении в слизь 3",
+    "eng": "Tensei shitara Slime Datta Ken 3rd Season",
+    "poster": "https://shikimori.one/system/animes/original/53580.jpg?1718498771",
+    "source": "shikimori",
+    "score": "7.71",
+    "shikimori_id": 53580
+  },
+  "Tensei shitara Slime Datta Ken OVA": {
+    "rus": "О моём перерождении в слизь",
+    "eng": "Tensei shitara Slime Datta Ken",
+    "poster": "https://shikimori.one/system/animes/original/37430.jpg?1711977107",
+    "source": "shikimori",
+    "score": "8.13",
+    "shikimori_id": 37430
+  },
+  "The Beginning After the End": {
+    "rus": "Что будет делать сильнейший король в своей второй жизни?",
+    "eng": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru?",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "source": "shikimori",
+    "score": "6.21",
+    "shikimori_id": 60146
+  },
+  "Tokidoki Bosotto Russia-go de Dereru Tonari no Alya-san": {
+    "rus": "Аля иногда кокетничает со мной по-русски",
+    "eng": "Tokidoki Bosotto Russia-go de Dereru Tonari no Alya-san",
+    "poster": "https://shikimori.one/system/animes/original/54744.jpg?1718725558",
+    "source": "shikimori",
+    "score": "7.54",
+    "shikimori_id": 54744
+  },
+  "Tondemo Skill de Isekai Hourou Meshi": {
+    "rus": "Кулинарные скитания в параллельном мире",
+    "eng": "Tondemo Skill de Isekai Hourou Meshi",
+    "poster": "https://shikimori.one/system/animes/original/53446.jpg?1709518221",
+    "source": "shikimori",
+    "score": "7.63",
+    "shikimori_id": 53446
+  },
+  "Toradora!": {
+    "rus": "Торадора!",
+    "eng": "Toradora!",
+    "poster": "https://shikimori.one/system/animes/original/4224.jpg?1711978202",
+    "source": "shikimori",
+    "score": "8.04",
+    "shikimori_id": 4224
+  },
+  "Working!!!": {
+    "rus": "Работа!! 3",
+    "eng": "Working!!!",
+    "poster": "https://shikimori.one/system/animes/original/25879.jpg?1711980577",
+    "source": "shikimori",
+    "score": "7.94",
+    "shikimori_id": 25879
+  },
+  "Yamada-kun to 7-nin no Majo": {
+    "rus": "Ямада-кун и семь ведьм",
+    "eng": "Yamada-kun to 7-nin no Majo",
+    "poster": "https://shikimori.one/system/animes/original/28677.jpg?1711982173",
+    "source": "shikimori",
+    "score": "7.52",
+    "shikimori_id": 28677
+  },
+  "Yamada-kun to 7-nin no Majo (OVA)": {
+    "rus": "Ямада-кун и семь ведьм OVA",
+    "eng": "Yamada-kun to 7-nin no Majo: Mou Hitotsu no Suzaku-sai",
+    "poster": "https://shikimori.one/system/animes/original/24627.jpg?1711982197",
+    "source": "shikimori",
+    "score": "7.4",
+    "shikimori_id": 24627
+  },
+  "Yuusha, Yamemasu": {
+    "rus": "Перестану быть героем",
+    "eng": "Yuusha, Yamemasu",
+    "poster": "https://shikimori.one/system/animes/original/50175.jpg?1716777185",
+    "source": "shikimori",
+    "score": "6.99",
+    "shikimori_id": 50175
+  },
+  "Ãbel Blatt": {
+    "rus": "Клинок зла",
+    "eng": "Übel Blatt",
+    "poster": "https://shikimori.one/system/animes/original/58216.jpg?1716642477",
+    "source": "shikimori",
+    "score": "6.33",
+    "shikimori_id": 58216
+  },
+  "Åoku The Inner Chambers": {
+    "rus": "Ооку: Внутренние покои",
+    "eng": "Oooku",
+    "poster": "https://shikimori.one/system/animes/original/54850.jpg?1711967745",
+    "source": "shikimori",
+    "score": "7.41",
+    "shikimori_id": 54850
+  }
+}
