@@ -1,0 +1,50 @@
+{
+  "DreamCast": {
+    "name": "Dream Cast",
+    "badge": "Dream Cast",
+    "icon": "🌟",
+    "folder": "торренты/DreamCast",
+    "local_torrents_count": 0,
+    "search_template": "https://animego.org/search/anime?q={query}"
+  },
+  "SHIZA_Project": {
+    "name": "SHIZA Project",
+    "badge": "SHIZA Project",
+    "icon": "⚡",
+    "folder": "торренты/SHIZA_Project",
+    "local_torrents_count": 0,
+    "search_template": "https://animego.org/search/anime?q={query}"
+  },
+  "AnimeVost": {
+    "name": "AnimeVost",
+    "badge": "AnimeVost",
+    "icon": "🎙️",
+    "folder": "торренты/AnimeVost",
+    "local_torrents_count": 0,
+    "search_template": "https://animevost.org/index.php?do=search&subaction=search&story={query}"
+  },
+  "StudioBand": {
+    "name": "Studio Band",
+    "badge": "Studio Band",
+    "icon": "🎭",
+    "folder": "торренты/StudioBand",
+    "local_torrents_count": 0,
+    "search_template": "https://animego.org/search/anime?q={query}"
+  },
+  "AniDUB": {
+    "name": "AniDUB",
+    "badge": "AniDUB",
+    "icon": "🎧",
+    "folder": "торренты/AniDUB",
+    "local_torrents_count": 0,
+    "search_template": "https://animego.org/search/anime?q={query}"
+  },
+  "MultiDub_Sub": {
+    "name": "Все озвучки / Субтитры (Nyaa)",
+    "badge": "Nyaa.si",
+    "icon": "🌐",
+    "folder": "торренты/MultiDub_Sub",
+    "local_torrents_count": 0,
+    "search_template": "https://nyaa.si/?f=0&c=1_2&q={query}"
+  }
+}
