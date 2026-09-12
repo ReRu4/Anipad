@@ -25,7 +25,7 @@ CSV_FILE = os.path.join(BASE, "Anixart_Bookmarks_15.08.2026.csv")
 ALIB_CACHE = os.path.join(BASE, "data", "anilibria_cache.json")
 SHIKI_CACHE = os.path.join(BASE, "data", "shikimori_cache.json")
 
-# Fallback cache paths in root
+# Fallbacks
 if not os.path.exists(ALIB_CACHE) and os.path.exists(os.path.join(BASE, "anilibria_cache.json")):
     ALIB_CACHE = os.path.join(BASE, "anilibria_cache.json")
 if not os.path.exists(SHIKI_CACHE) and os.path.exists(os.path.join(BASE, "shikimori_cache.json")):
@@ -135,8 +135,9 @@ def mark_batch_completeness(variants):
             v['missing_episodes'] = 0
 
 EXACT_OVERRIDE = {
-    "91 days": {"rus": "91 день", "orig": "91 Days", "poster": "https://anilibria.top/storage/releases/posters/2621/DVXo5Et1dENZo1aQWxVXETczQSQwSkYk.jpg", "genres": ["Экшен", "Драма", "Исторический"], "desc": "В эпоху сухого закона мафия правит городом. Авилио возвращается в город Закон после долгих лет изгнания, чтобы отомстить мафиозной семье Ванетти за убийство своей семьи."},
+    "91 days": {"rus": "91 день", "orig": "91 Days", "poster": "https://shikimori.one/system/animes/original/32998.jpg", "genres": ["Экшен", "Драма", "Исторический"], "desc": "В эпоху сухого закона мафия правит городом. Авилио возвращается в город Закон после долгих лет изгнания, чтобы отомстить мафиозной семье Ванетти за убийство своей семьи."},
     "days": {"rus": "Дни", "orig": "Days", "poster": "https://anilibria.top/storage/releases/posters/2642/DHlCIDHvHSc9FDCCLOoHUw5mhoFyU5gg.jpg", "genres": ["Спорт", "Школа", "Сёнен"], "desc": "История о двух парнях, которые повстречались одной ветреной ночью: Цукуси, неуклюжем и неприметном парне, и Дзине, футбольном гении. В тот день они изменили мир старшей школы Сэйсэки."},
+    "busamen gachi fighter": {"rus": "Всё тот же невзрачный боец", "orig": "Busamen Gachi Fighter", "poster": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx115909-F3DtjCFcRUdG.jpg", "genres": ["Экшен", "Приключения", "Фэнтези", "Комедия", "Исекай"], "desc": "Ёсиока Сигеру — мужчина с внешностью на -255 очков. Любое прикосновение к девушке приносит ему физическую боль, а интимная близость буквально разорвет его. Переродившись в другом мире с абсолютными боевыми параметрами, он начинает невероятное приключение!"},
     "attack on titan": {"rus": "Атака титанов", "orig": "Shingeki no Kyojin", "poster": "https://shikimori.one/system/animes/original/16498.jpg?1711973439"},
     "bleach sennen kessen hen": {"rus": "Блич: Тысячелетняя кровавая война", "orig": "Bleach: Sennen Kessen-hen", "poster": "https://shikimori.one/system/animes/original/41467.jpg?1711944193"},
     "bluelock": {"rus": "Синяя тюрьма: Блю Лок", "orig": "Blue Lock", "poster": "https://shikimori.one/system/animes/original/49596.jpg?1711944212"},
@@ -231,7 +232,6 @@ def run_organizer():
                 except Exception: pass
                 
     all_master_torrents = []
-    # Scan root торренты and studio subfolders
     for root, dirs, files in os.walk(TORRENTS_DIR):
         for f in files:
             if f.endswith('.torrent'):
@@ -334,7 +334,6 @@ def run_organizer():
         
         clean_desc = re.sub(r'[\r\n\t]+', ' ', desc or '').strip()
         
-        # Detect studio
         studio = "AniLibria"
         if "DreamCast" in src_path: studio = "Dream Cast"
         elif "SHIZA" in src_path: studio = "SHIZA Project"
@@ -382,11 +381,16 @@ def run_organizer():
             s_num = m_s.group(1)
             if m_p: season_label = f"{s_num} сезон (Часть {m_p.group(1)})"
             else: season_label = f"{s_num} сезон"
-        elif m_p: season_label = f"1 сезон (Часть {m_p.group(1)})"
-        elif re.search(r'\s+2\b', r_lo) or re.search(r'\s+2\b', o_lo): season_label = "2 сезон"
-        elif re.search(r'\s+3\b', r_lo) or re.search(r'\s+3\b', o_lo): season_label = "3 сезон"
-        elif re.search(r'\s+4\b', r_lo) or re.search(r'\s+4\b', o_lo): season_label = "4 сезон"
-        else: season_label = "1 сезон"
+        elif m_p:
+            season_label = f"1 сезон (Часть {m_p.group(1)})"
+        elif re.search(r'\s+2\b', r_lo) or re.search(r'\s+2\b', o_lo):
+            season_label = "2 сезон"
+        elif re.search(r'\s+3\b', r_lo) or re.search(r'\s+3\b', o_lo):
+            season_label = "3 сезон"
+        elif re.search(r'\s+4\b', r_lo) or re.search(r'\s+4\b', o_lo):
+            season_label = "4 сезон"
+        else:
+            season_label = "1 сезон"
 
         base_rus = re.sub(r'(\s*\(?\d+\-?(?:й|ой|ий|ый)?\s*сезон\)?|\s*:\s*фильм.*|\s+фильм.*|\s+ova.*|\s+тв\-\d+|\s+часть\s*\d+|\s+\d+$)', '', rus_title, flags=re.I).strip()
         base_rus = re.sub(r'(\s+тв|\s+tv|\s+ova|\s+ona|\s+movie|\s+спешл).*', '', base_rus, flags=re.I).strip()
