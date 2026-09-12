@@ -29,6 +29,7 @@ ctx.verify_mode = ssl.CERT_NONE
 BASE = os.path.dirname(os.path.abspath(__file__))
 TORRENTS_DIR = os.path.join(BASE, "торренты")
 POSTERS_DIR = os.path.join(BASE, "Постеры")
+CSV_FILE = os.path.join(BASE, "Anixart_Bookmarks_15.08.2026.csv")
 ALIB_CACHE = os.path.join(BASE, "anilibria_cache.json")
 SHIKI_CACHE = os.path.join(BASE, "shikimori_cache.json")
 
@@ -98,6 +99,40 @@ def safe(name):
     for c in '<>:"|?*«»': name = name.replace(c, '')
     return re.sub(r'\s+', ' ', name).strip()
 
+EXACT_OVERRIDE = {
+    "91 days": {"rus": "91 день", "orig": "91 Days", "poster": "https://anilibria.top/storage/releases/posters/2621/DVXo5Et1dENZo1aQWxVXETczQSQwSkYk.jpg", "genres": ["Экшен", "Драма", "Исторический"], "desc": "В эпоху сухого закона мафия правит городом. Авилио возвращается в город Закон после долгих лет изгнания, чтобы отомстить мафиозной семье Ванетти за убийство своей семьи."},
+    "days": {"rus": "Дни", "orig": "Days", "poster": "https://anilibria.top/storage/releases/posters/2642/DHlCIDHvHSc9FDCCLOoHUw5mhoFyU5gg.jpg", "genres": ["Спорт", "Школа", "Сёнен"], "desc": "История о двух парнях, которые повстречались одной ветреной ночью: Цукуси, неуклюжем и неприметном парне, и Дзине, футбольном гении. В тот день они изменили мир старшей школы Сэйсэки."},
+    "attack on titan": {"rus": "Атака титанов", "orig": "Shingeki no Kyojin", "poster": "https://shikimori.one/system/animes/original/16498.jpg?1711973439"},
+    "bleach sennen kessen hen": {"rus": "Блич: Тысячелетняя кровавая война", "orig": "Bleach: Sennen Kessen-hen", "poster": "https://shikimori.one/system/animes/original/41467.jpg?1711944193"},
+    "bluelock": {"rus": "Синяя тюрьма: Блю Лок", "orig": "Blue Lock", "poster": "https://shikimori.one/system/animes/original/49596.jpg?1711944212"},
+    "black rock shooter ova": {"rus": "Стрелок с Чёрной скалы OVA", "orig": "Black★Rock Shooter (OVA)", "poster": "https://shikimori.one/system/animes/original/7062.jpg?1711953511"},
+    "busamen gachi fighter": {"rus": "Всё тот же невзрачный боец", "orig": "Busamen Gachi Fighter", "poster": "https://shikimori.one/system/animes/original/59918.jpg"},
+    "chainsaw man": {"rus": "Человек-бензопила", "orig": "Chainsaw Man", "poster": "https://shikimori.one/system/animes/original/44511.jpg?1711945574"},
+    "charlotte": {"rus": "Шарлотта", "orig": "Charlotte", "poster": "https://shikimori.one/system/animes/original/28999.jpg?1711945851"},
+    "charlotte tsuyoimono tachi": {"rus": "Шарлотта: Сильные люди", "orig": "Charlotte: Tsuyoimono-tachi", "poster": "https://shikimori.one/system/animes/original/31553.jpg?1711945826"},
+    "dorohedoro": {"rus": "Дорохедоро", "orig": "Dorohedoro", "poster": "https://shikimori.one/system/animes/original/38668.jpg?1711948099"},
+    "enen no shouboutai": {"rus": "Пламенная бригада пожарных", "orig": "Enen no Shouboutai", "poster": "https://shikimori.one/system/animes/original/38671.jpg?1711948922"},
+    "enen no shouboutai ni no shou": {"rus": "Пламенная бригада пожарных: Вторая глава", "orig": "Enen no Shouboutai: Ni no Shou", "poster": "https://shikimori.one/system/animes/original/40956.jpg?1711948877"},
+    "fairy tail final series": {"rus": "Хвост Феи: Финал", "orig": "Fairy Tail: Final Series", "poster": "https://shikimori.one/system/animes/original/35972.jpg?1711949100"},
+    "fairy tail movie 2 dragon cry": {"rus": "Хвост Феи: Плач дракона", "orig": "Fairy Tail Movie 2: Dragon Cry", "poster": "https://shikimori.one/system/animes/original/30778.jpg?1711949118"},
+    "fateapocrypha": {"rus": "Судьба/Апокриф", "orig": "Fate/Apocrypha", "poster": "https://shikimori.one/system/animes/original/34349.jpg?1711947605"},
+    "fatestay night unlimited blade works": {"rus": "Судьба/Ночь схватки: Бесконечный мир клинков", "orig": "Fate/stay night: Unlimited Blade Works", "poster": "https://shikimori.one/system/animes/original/22297.jpg?1711950480"},
+    "fuuka": {"rus": "Фука", "orig": "Fuuka", "poster": "https://shikimori.one/system/animes/original/33743.jpg?1711949982"},
+    "golden time": {"rus": "Золотая пора", "orig": "Golden Time", "poster": "https://shikimori.one/system/animes/original/17895.jpg?1711951640"},
+    "highschool of the dead": {"rus": "Школа мертвецов", "orig": "Highschool of the Dead", "poster": "https://shikimori.one/system/animes/original/8074.jpg?1711953602"},
+    "kokoro connect": {"rus": "Связь сердец", "orig": "Kokoro Connect", "poster": "https://shikimori.one/system/animes/original/11887.jpg?1711959319"},
+    "kono oto tomare": {"rus": "Задержи этот звук!", "orig": "Kono Oto Tomare!", "poster": "https://shikimori.one/system/animes/original/38080.jpg?1711959580"},
+    "kono subarashii sekai ni shukufuku wo 2": {"rus": "Этот замечательный мир! 2", "orig": "Kono Subarashii Sekai ni Shukufuku wo! 2", "poster": "https://shikimori.one/system/animes/original/32937.jpg?1711959560"},
+    "nierautomata ver1 1a": {"rus": "Ниер: Автомата — Версия 1.1а", "orig": "NieR:Automata Ver1.1a", "poster": "https://shikimori.one/system/animes/original/51105.jpg?1718592170"},
+    "recreators": {"rus": "Возрождающие", "orig": "Re:Creators", "poster": "https://shikimori.one/system/animes/original/34561.jpg?1711970109"},
+    "sk8": {"rus": "Скейт: Бесконечность", "orig": "SK8 the Infinity", "poster": "https://shikimori.one/system/animes/original/42923.jpg?1711974459"},
+    "shuumatsu no walkure": {"rus": "Повесть о конце света", "orig": "Shuumatsu no Walküre", "poster": "https://shikimori.one/system/animes/original/44942.jpg?1711974270"},
+    "tokidoki bosotto russia go de dereru tonari no alya san": {"rus": "Аля иногда кокетничает со мной по-русски", "orig": "Tokidoki Bosotto Russia-go de Dereru Tonari no Alya-san", "poster": "https://shikimori.one/system/animes/original/54744.jpg?1718725558"},
+    "tondemo skill de isekai hourou meshi": {"rus": "Кулинарные скитания в параллельном мире", "orig": "Tondemo Skill de Isekai Hourou Meshi", "poster": "https://shikimori.one/system/animes/original/53446.jpg?1709518221"},
+    "toradora": {"rus": "Торадора!", "orig": "Toradora!", "poster": "https://shikimori.one/system/animes/original/4224.jpg?1711978202"},
+    "grand blue": {"rus": "Необъятный океан", "orig": "Grand Blue", "poster": "https://anilibria.top/storage/releases/posters/8721/nQ8wS0g7MvC8uR6yL4pK8sH2mX9nQ3zW.jpg"}
+}
+
 def find_csv_file():
     for i, arg in enumerate(sys.argv):
         if arg == '--csv' and i + 1 < len(sys.argv):
@@ -112,7 +147,6 @@ def find_csv_file():
 
 def parse_bookmarks_csv(csv_path):
     if not csv_path or not os.path.exists(csv_path):
-        print("  [!] Файл CSV закладок не найден. Запуск в режиме полной библиотеки.")
         return [], {}
         
     with open(csv_path, encoding='utf-8-sig') as f:
@@ -131,7 +165,7 @@ def parse_bookmarks_csv(csv_path):
     if cur: rows.append(cur)
 
     anixart_bookmarks = []
-    anixart_map = {}
+    anixart_exact = {}
 
     for r in rows:
         m = re.match(r'^(\d+),(.*)$', r)
@@ -154,76 +188,32 @@ def parse_bookmarks_csv(csv_path):
         
         for t in [rus, orig] + [a.strip() for a in alts.split(',') if a.strip()]:
             c = clean(t)
-            if c and c not in anixart_map:
-                anixart_map[c] = entry
+            if c and c not in anixart_exact:
+                anixart_exact[c] = entry
 
-    return anixart_bookmarks, anixart_map
-
-def get_franchise_info(rus_title, orig_title):
-    r_lo = rus_title.lower()
-    o_lo = orig_title.lower()
-    
-    m_s = re.search(r'(\d+)\s*(?:й|ой|ий|ый)?\s*сезон', r_lo) or re.search(r'season\s*(\d+)', o_lo) or re.search(r'(\d+)(?:nd|rd|th|st)\s*season', o_lo)
-    m_p = re.search(r'часть\s*(\d+)', r_lo) or re.search(r'part\s*(\d+)', o_lo) or re.search(r'(\d+)(?:nd|rd|th|st)?\s*cour', o_lo)
-    
-    if 'фильм' in r_lo or 'movie' in o_lo or 'film' in o_lo:
-        season_label = "Фильм"
-    elif 'ova' in r_lo or 'ova' in o_lo:
-        season_label = "OVA"
-    elif 'ona' in r_lo or 'ona' in o_lo:
-        season_label = "ONA"
-    elif 'спешл' in r_lo or 'special' in o_lo or 'sp' in o_lo:
-        season_label = "Спешл"
-    elif m_s:
-        s_num = m_s.group(1)
-        if m_p: season_label = f"{s_num} сезон (Часть {m_p.group(1)})"
-        else: season_label = f"{s_num} сезон"
-    elif m_p:
-        season_label = f"1 сезон (Часть {m_p.group(1)})"
-    elif re.search(r'\s+2\b', r_lo) or re.search(r'\s+2\b', o_lo):
-        season_label = "2 сезон"
-    elif re.search(r'\s+3\b', r_lo) or re.search(r'\s+3\b', o_lo):
-        season_label = "3 сезон"
-    elif re.search(r'\s+4\b', r_lo) or re.search(r'\s+4\b', o_lo):
-        season_label = "4 сезон"
-    else:
-        season_label = "1 сезон"
-
-    base_rus = re.sub(r'(\s*\(?\d+\-?(?:й|ой|ий|ый)?\s*сезон\)?|\s*:\s*фильм.*|\s+фильм.*|\s+ova.*|\s+тв\-\d+|\s+часть\s*\d+|\s+\d+$)', '', rus_title, flags=re.I).strip()
-    base_rus = re.sub(r'(\s+тв|\s+tv|\s+ova|\s+ona|\s+movie|\s+спешл).*', '', base_rus, flags=re.I).strip()
-    base_rus = re.sub(r'[\s\-–—:]+$', '', base_rus).strip()
-    
-    base_orig = re.sub(r'(\s*\(?\d*(?:nd|rd|th|st)?\s*season\s*\d*\)?|\s*movie.*|\s*film.*|\s*ova.*|\s*ona.*|\s*tv\-\d+|\s*part\s*\d+|\s*\d*(?:nd|rd|th|st)?\s*cour|\s+\d+$)', '', orig_title, flags=re.I).strip()
-    base_orig = re.sub(r'(\s+tv|\s+ova|\s+ona|\s+movie|\s+special).*', '', base_orig, flags=re.I).strip()
-    base_orig = re.sub(r'[\s\-–—:]+$', '', base_orig).strip()
-    
-    f_key = clean(base_rus) or clean(base_orig)
-    return f_key, base_rus or rus_title, base_orig or orig_title, season_label
+    return anixart_bookmarks, anixart_exact
 
 def main():
     print("==================================================")
     print("🌸 АВТОНОМНЫЙ ОРГАНИЗАТОР И КАТАЛОГ АНИМЕ 🌸")
     print("==================================================")
     
-    # 1. Load Cache
     with open(ALIB_CACHE, encoding='utf-8') as f: alib_releases = json.load(f)
     with open(SHIKI_CACHE, encoding='utf-8') as f: shiki_cache = json.load(f)
     
-    alib_lookup = {}
+    alib_exact = {}
     for r in alib_releases:
         names = r.get('name', {})
         for k in [names.get('english'), names.get('main'), names.get('alternative'), r.get('alias')]:
             if k:
                 c = clean(k)
-                if c and c not in alib_lookup: alib_lookup[c] = r
+                if c and c not in alib_exact: alib_exact[c] = r
                 
-    # 2. Find and Parse CSV Bookmarks
     csv_path = find_csv_file()
-    print(f"1. Используется файл закладок: {os.path.basename(csv_path) if csv_path else 'Не указан'}")
-    anixart_bookmarks, anixart_map = parse_bookmarks_csv(csv_path)
+    print(f"1. Файл закладок: {os.path.basename(csv_path) if csv_path else 'Не указан'}")
+    anixart_bookmarks, anixart_exact_map = parse_bookmarks_csv(csv_path)
     print(f"   Загружено закладок: {len(anixart_bookmarks)}")
     
-    # 3. Clean sorted folders
     folders = ['Просмотрено', 'В планах', 'Отложено', 'Смотрю', 'Остальные торренты']
     for st in folders:
         p = os.path.join(BASE, st)
@@ -233,7 +223,6 @@ def main():
                 try: os.remove(os.path.join(p, f))
                 except Exception: pass
                 
-    # 4. Parse & Organize Master Torrents
     all_master_torrents = [f for f in os.listdir(TORRENTS_DIR) if f.endswith('.torrent')]
     print(f"2. Обработка библиотеки торрентов ({len(all_master_torrents)} файлов)...")
     
@@ -256,13 +245,14 @@ def main():
         qual = " ".join(q_parts)
         return title, ep, qual
 
-    def get_metadata(title):
-        if title in shiki_cache:
-            s = shiki_cache[title]
-            return s.get('rus', title), s.get('eng', title), s.get('poster', ''), s.get('genres', []), s.get('description', ''), s.get('shikimori_id'), None
+    def get_metadata_strict(title):
         c = clean(title)
-        if c in alib_lookup:
-            rel = alib_lookup[c]
+        if c in EXACT_OVERRIDE:
+            o = EXACT_OVERRIDE[c]
+            return o['rus'], o['orig'], o.get('poster', ''), o.get('genres', []), o.get('desc', ''), None, None
+
+        if c in alib_exact:
+            rel = alib_exact[c]
             rus = rel.get('name', {}).get('main', '') or title
             orig = rel.get('name', {}).get('english', '') or title
             p = rel.get('poster', {}).get('src', '')
@@ -272,39 +262,24 @@ def main():
             shiki_id = rel.get('shikimori', {}).get('id') if isinstance(rel.get('shikimori'), dict) else None
             alias = rel.get('alias')
             return rus, orig, poster, genres, desc, shiki_id, alias
-        for k, rel in alib_lookup.items():
-            if len(k) > 4 and len(c) > 4 and (k == c or k in c or c in k):
-                rus = rel.get('name', {}).get('main', '') or title
-                orig = rel.get('name', {}).get('english', '') or title
-                p = rel.get('poster', {}).get('src', '')
-                poster = f"https://anilibria.top{p}" if p and not p.startswith('http') else p
-                genres = [g['name'] for g in rel.get('genres', []) if isinstance(g, dict) and g.get('name')]
-                desc = rel.get('description', '')
-                shiki_id = rel.get('shikimori', {}).get('id') if isinstance(rel.get('shikimori'), dict) else None
-                alias = rel.get('alias')
-                return rus, orig, poster, genres, desc, shiki_id, alias
+
+        if title in shiki_cache:
+            s = shiki_cache[title]
+            return s.get('rus', title), s.get('eng', title), s.get('poster', ''), s.get('genres', []), s.get('description', ''), s.get('shikimori_id'), None
+
         return title, title, '', [], '', None, None
 
     def process_one_torrent(f):
         src_path = os.path.join(TORRENTS_DIR, f)
         t_title, ep, qual = parse_master_torrent(f)
-        rus_title, orig_title, poster_url, genres, desc, shiki_id, alias = get_metadata(t_title)
+        rus_title, orig_title, poster_url, genres, desc, shiki_id, alias = get_metadata_strict(t_title)
         
         hit = None
         for cand in [clean(rus_title), clean(orig_title), clean(t_title)]:
-            if cand in anixart_map:
-                hit = anixart_map[cand]
+            if cand in anixart_exact_map:
+                hit = anixart_exact_map[cand]
                 break
-        if not hit:
-            c_ru = clean(rus_title)
-            c_orig = clean(orig_title)
-            for bm in anixart_bookmarks:
-                er = clean(bm['rus'])
-                eo = clean(bm['orig'])
-                if (len(er) > 5 and (er in c_ru or c_ru in er)) or (len(eo) > 5 and (eo in c_orig or c_orig in eo)):
-                    hit = bm
-                    break
-                    
+                
         if hit:
             status = hit['status']
             rating = hit['rating']
@@ -368,18 +343,64 @@ def main():
 
     with ThreadPoolExecutor(max_workers=24) as executor:
         copied_torrents = list(executor.map(process_one_torrent, all_master_torrents))
-    print(f"   Успешно скопировано и переименовано: {len(copied_torrents)} файлов")
+    print(f"   Успешно скопировано: {len(copied_torrents)} файлов")
 
-    # 5. Group into Franchises
-    print("3. Объединение сезонов и релизов в франшизы...")
+    def get_franchise_info(rus_title, orig_title):
+        r_lo = rus_title.lower()
+        o_lo = orig_title.lower()
+        
+        m_s = re.search(r'(\d+)\s*(?:й|ой|ий|ый)?\s*сезон', r_lo) or re.search(r'season\s*(\d+)', o_lo) or re.search(r'(\d+)(?:nd|rd|th|st)\s*season', o_lo)
+        m_p = re.search(r'часть\s*(\d+)', r_lo) or re.search(r'part\s*(\d+)', o_lo) or re.search(r'(\d+)(?:nd|rd|th|st)?\s*cour', o_lo)
+        
+        if 'фильм' in r_lo or 'movie' in o_lo or 'film' in o_lo:
+            season_label = "Фильм"
+        elif 'ova' in r_lo or 'ova' in o_lo:
+            season_label = "OVA"
+        elif 'ona' in r_lo or 'ona' in o_lo:
+            season_label = "ONA"
+        elif 'спешл' in r_lo or 'special' in o_lo or 'sp' in o_lo:
+            season_label = "Спешл"
+        elif m_s:
+            s_num = m_s.group(1)
+            if m_p: season_label = f"{s_num} сезон (Часть {m_p.group(1)})"
+            else: season_label = f"{s_num} сезон"
+        elif m_p:
+            season_label = f"1 сезон (Часть {m_p.group(1)})"
+        elif re.search(r'\s+2\b', r_lo) or re.search(r'\s+2\b', o_lo):
+            season_label = "2 сезон"
+        elif re.search(r'\s+3\b', r_lo) or re.search(r'\s+3\b', o_lo):
+            season_label = "3 сезон"
+        elif re.search(r'\s+4\b', r_lo) or re.search(r'\s+4\b', o_lo):
+            season_label = "4 сезон"
+        else:
+            season_label = "1 сезон"
+
+        base_rus = re.sub(r'(\s*\(?\d+\-?(?:й|ой|ий|ый)?\s*сезон\)?|\s*:\s*фильм.*|\s+фильм.*|\s+ova.*|\s+тв\-\d+|\s+часть\s*\d+|\s+\d+$)', '', rus_title, flags=re.I).strip()
+        base_rus = re.sub(r'(\s+тв|\s+tv|\s+ova|\s+ona|\s+movie|\s+спешл).*', '', base_rus, flags=re.I).strip()
+        base_rus = re.sub(r'[\s\-–—:]+$', '', base_rus).strip()
+        
+        base_orig = re.sub(r'(\s*\(?\d*(?:nd|rd|th|st)?\s*season\s*\d*\)?|\s*movie.*|\s*film.*|\s*ova.*|\s*ona.*|\s*tv\-\d+|\s*part\s*\d+|\s*\d*(?:nd|rd|th|st)?\s*cour|\s+\d+$)', '', orig_title, flags=re.I).strip()
+        base_orig = re.sub(r'(\s+tv|\s+ova|\s+ona|\s+movie|\s+special).*', '', base_orig, flags=re.I).strip()
+        base_orig = re.sub(r'[\s\-–—:]+$', '', base_orig).strip()
+        
+        f_key = clean(base_rus) or clean(base_orig)
+        return f_key, base_rus or rus_title, base_orig or orig_title, season_label
+
     franchises = {}
+
     for it in copied_torrents:
         f_key, f_rus, f_orig, s_label = get_franchise_info(it['rus'], it['orig'])
+        
         safe_name_season = safe(it['rus'])[:70] + '.jpg'
         local_p_season = os.path.join(POSTERS_DIR, it['status'], safe_name_season)
         season_poster_rel = ""
         if os.path.exists(local_p_season) and os.path.getsize(local_p_season) > 500:
             season_poster_rel = f"Постеры/{urllib.parse.quote(it['status'])}/{urllib.parse.quote(safe_name_season)}"
+        else:
+            safe_name_base = safe(f_rus)[:70] + '.jpg'
+            local_p_base = os.path.join(POSTERS_DIR, it['status'], safe_name_base)
+            if os.path.exists(local_p_base) and os.path.getsize(local_p_base) > 500:
+                season_poster_rel = f"Постеры/{urllib.parse.quote(it['status'])}/{urllib.parse.quote(safe_name_base)}"
 
         if f_key not in franchises:
             franchises[f_key] = {
@@ -451,14 +472,13 @@ def main():
             'source': 'local'
         })
 
-    # Include missing seasons/anime from bookmarks
     for bm in anixart_bookmarks:
         f_key, f_rus, f_orig, s_label = get_franchise_info(bm['rus'], bm['orig'])
         c_bm_orig = clean(bm['orig'])
         c_bm_rus = clean(bm['rus'])
         alias = None
-        if c_bm_orig in alib_lookup: alias = alib_lookup[c_bm_orig].get('alias')
-        elif c_bm_rus in alib_lookup: alias = alib_lookup[c_bm_rus].get('alias')
+        if c_bm_orig in alib_exact: alias = alib_exact[c_bm_orig].get('alias')
+        elif c_bm_rus in alib_exact: alias = alib_exact[c_bm_rus].get('alias')
         
         aniliberty_url = f"https://aniliberty.top/anime/releases/release/{alias}" if alias else f"https://aniliberty.top"
         query_encoded = urllib.parse.quote(bm['rus'])
@@ -514,8 +534,8 @@ def main():
             genres = s.get('genres', [])
             desc = re.sub(r'[\r\n\t]+', ' ', s.get('description', '')).strip()
             s_id = s.get('shikimori_id')
-        elif c_bm_orig in alib_lookup:
-            rel = alib_lookup[c_bm_orig]
+        elif c_bm_orig in alib_exact:
+            rel = alib_exact[c_bm_orig]
             p = rel.get('poster', {}).get('src', '')
             if p: online_p = f"https://anilibria.top{p}" if not p.startswith('http') else p
             genres = [g['name'] for g in rel.get('genres', []) if isinstance(g, dict) and g.get('name')]
