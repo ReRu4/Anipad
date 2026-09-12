@@ -5,7 +5,7 @@
 # 3. Точный расчет размеров раздач в ГБ/МБ через встроенный Bencode парсер
 # 4. Выбор качества в карточках с указанием размера
 # 5. Интеграцию онлайн-поиска и раздач (AniLibria, RuTracker, Nyaa) для аниме из CSV без локальных файлов
-# 6. Загрузку CSV drag-and-drop прямо в веб-интерфейсе Каталог_Аниме.html
+# 6. Динамическое переключение постеров сезонов и модальное окно с описанием и жанрами
 
 import os
 import sys
@@ -99,16 +99,13 @@ def safe(name):
     return re.sub(r'\s+', ' ', name).strip()
 
 def find_csv_file():
-    # Check CLI arguments
     for i, arg in enumerate(sys.argv):
         if arg == '--csv' and i + 1 < len(sys.argv):
             return sys.argv[i + 1]
-    # Auto-detect CSV in BASE directory
     for f in os.listdir(BASE):
         if f.endswith('.csv') and ('bookmark' in f.lower() or 'anixart' in f.lower() or 'shikimori' in f.lower() or 'anime' in f.lower()):
             if f != 'Коллекция_Аниме.csv':
                 return os.path.join(BASE, f)
-    # Default fallback
     fallback = os.path.join(BASE, "Anixart_Bookmarks_15.08.2026.csv")
     if os.path.exists(fallback): return fallback
     return None
@@ -182,7 +179,7 @@ def get_franchise_info(rus_title, orig_title):
         if m_p: season_label = f"{s_num} сезон (Часть {m_p.group(1)})"
         else: season_label = f"{s_num} сезон"
     elif m_p:
-        season_label = f"Часть {m_p.group(1)}"
+        season_label = f"1 сезон (Часть {m_p.group(1)})"
     elif re.search(r'\s+2\b', r_lo) or re.search(r'\s+2\b', o_lo):
         season_label = "2 сезон"
     elif re.search(r'\s+3\b', r_lo) or re.search(r'\s+3\b', o_lo):
@@ -262,7 +259,7 @@ def main():
     def get_metadata(title):
         if title in shiki_cache:
             s = shiki_cache[title]
-            return s.get('rus', title), s.get('eng', title), s.get('poster', '')
+            return s.get('rus', title), s.get('eng', title), s.get('poster', ''), s.get('genres', []), s.get('description', ''), s.get('shikimori_id')
         c = clean(title)
         if c in alib_lookup:
             rel = alib_lookup[c]
@@ -270,20 +267,26 @@ def main():
             orig = rel.get('name', {}).get('english', '') or title
             p = rel.get('poster', {}).get('src', '')
             poster = f"https://anilibria.top{p}" if p and not p.startswith('http') else p
-            return rus, orig, poster
+            genres = [g['name'] for g in rel.get('genres', []) if isinstance(g, dict) and g.get('name')]
+            desc = rel.get('description', '')
+            shiki_id = rel.get('shikimori', {}).get('id') if isinstance(rel.get('shikimori'), dict) else None
+            return rus, orig, poster, genres, desc, shiki_id
         for k, rel in alib_lookup.items():
             if len(k) > 4 and len(c) > 4 and (k == c or k in c or c in k):
                 rus = rel.get('name', {}).get('main', '') or title
                 orig = rel.get('name', {}).get('english', '') or title
                 p = rel.get('poster', {}).get('src', '')
                 poster = f"https://anilibria.top{p}" if p and not p.startswith('http') else p
-                return rus, orig, poster
-        return title, title, ''
+                genres = [g['name'] for g in rel.get('genres', []) if isinstance(g, dict) and g.get('name')]
+                desc = rel.get('description', '')
+                shiki_id = rel.get('shikimori', {}).get('id') if isinstance(rel.get('shikimori'), dict) else None
+                return rus, orig, poster, genres, desc, shiki_id
+        return title, title, '', [], '', None
 
     def process_one_torrent(f):
         src_path = os.path.join(TORRENTS_DIR, f)
         t_title, ep, qual = parse_master_torrent(f)
-        rus_title, orig_title, poster_url = get_metadata(t_title)
+        rus_title, orig_title, poster_url, genres, desc, shiki_id = get_metadata(t_title)
         
         hit = None
         for cand in [clean(rus_title), clean(orig_title), clean(t_title)]:
@@ -352,7 +355,10 @@ def main():
             'badge': badge,
             'size_bytes': size_bytes,
             'size_str': size_str,
-            'poster_url': poster_url
+            'poster_url': poster_url,
+            'genres': genres,
+            'description': desc,
+            'shikimori_id': shiki_id
         }
 
     with ThreadPoolExecutor(max_workers=24) as executor:
@@ -364,13 +370,13 @@ def main():
     franchises = {}
     for it in copied_torrents:
         f_key, f_rus, f_orig, s_label = get_franchise_info(it['rus'], it['orig'])
+        safe_name_season = safe(it['rus'])[:70] + '.jpg'
+        local_p_season = os.path.join(POSTERS_DIR, it['status'], safe_name_season)
+        season_poster_rel = ""
+        if os.path.exists(local_p_season) and os.path.getsize(local_p_season) > 500:
+            season_poster_rel = f"Постеры/{urllib.parse.quote(it['status'])}/{urllib.parse.quote(safe_name_season)}"
+
         if f_key not in franchises:
-            safe_name = safe(f_rus)[:70] + '.jpg'
-            local_p = os.path.join(POSTERS_DIR, it['status'], safe_name)
-            poster_rel = ""
-            if os.path.exists(local_p) and os.path.getsize(local_p) > 500:
-                poster_rel = f"Постеры/{urllib.parse.quote(it['status'])}/{urllib.parse.quote(safe_name)}"
-                
             franchises[f_key] = {
                 'id': len(franchises) + 1,
                 'f_key': f_key,
@@ -378,8 +384,11 @@ def main():
                 'orig': f_orig,
                 'status': it['status'],
                 'rating': it['rating'],
-                'poster': poster_rel,
+                'poster': season_poster_rel,
                 'fallback_poster': it['poster_url'],
+                'genres': it['genres'],
+                'description': it['description'],
+                'shikimori_id': it['shikimori_id'],
                 'seasons': {}
             }
         fr = franchises[f_key]
@@ -388,8 +397,16 @@ def main():
             fr['status'] = it['status']
         if it['rating'] and it['rating'] != 'Не оценено':
             fr['rating'] = it['rating']
-        if not fr['poster'] and it['poster_url']:
+        if not fr['poster'] and season_poster_rel:
+            fr['poster'] = season_poster_rel
+        if not fr['fallback_poster'] and it['poster_url']:
             fr['fallback_poster'] = it['poster_url']
+        if not fr['genres'] and it['genres']:
+            fr['genres'] = it['genres']
+        if not fr['description'] and it['description']:
+            fr['description'] = it['description']
+        if not fr['shikimori_id'] and it['shikimori_id']:
+            fr['shikimori_id'] = it['shikimori_id']
             
         if s_label not in fr['seasons']:
             fr['seasons'][s_label] = {
@@ -398,10 +415,18 @@ def main():
                 'episodes': it['episodes'],
                 'status': it['status'],
                 'rating': it['rating'],
+                'poster': season_poster_rel,
+                'fallback_poster': it['poster_url'],
+                'genres': it['genres'],
+                'description': it['description'],
                 'variants': []
             }
         sn = fr['seasons'][s_label]
         if it['episodes'] and not sn['episodes']: sn['episodes'] = it['episodes']
+        if not sn['poster'] and season_poster_rel: sn['poster'] = season_poster_rel
+        if not sn['fallback_poster'] and it['poster_url']: sn['fallback_poster'] = it['poster_url']
+        if not sn['genres'] and it['genres']: sn['genres'] = it['genres']
+        if not sn['description'] and it['description']: sn['description'] = it['description']
         sn['variants'].append({
             'filename': it['new_name'],
             'url': it['url'],
@@ -413,26 +438,72 @@ def main():
             'source': 'local'
         })
 
-    # Include anime from CSV without local torrents
+    # Include missing seasons/anime from bookmarks
     missing_count = 0
     for bm in anixart_bookmarks:
         f_key, f_rus, f_orig, s_label = get_franchise_info(bm['rus'], bm['orig'])
-        if f_key not in franchises:
-            safe_name = safe(f_rus)[:70] + '.jpg'
-            local_p = os.path.join(POSTERS_DIR, bm['status'], safe_name)
-            poster_rel = ""
-            if os.path.exists(local_p) and os.path.getsize(local_p) > 500:
-                poster_rel = f"Постеры/{urllib.parse.quote(bm['status'])}/{urllib.parse.quote(safe_name)}"
-            online_p = ""
-            c = clean(bm['orig']) or clean(bm['rus'])
-            if bm['orig'] in shiki_cache and shiki_cache[bm['orig']].get('poster'): online_p = shiki_cache[bm['orig']]['poster']
-            elif c in alib_lookup:
-                p = alib_lookup[c].get('poster', {}).get('src')
-                if p: online_p = f"https://anilibria.top{p}" if not p.startswith('http') else p
-                
-            query_encoded = urllib.parse.quote(bm['rus'])
-            nyaa_encoded = urllib.parse.quote(bm['orig'] or bm['rus'])
+        query_encoded = urllib.parse.quote(bm['rus'])
+        nyaa_encoded = urllib.parse.quote(bm['orig'] or bm['rus'])
+        online_variants = [
+            {
+                'filename': f"Поиск AniLibria: {bm['rus']}",
+                'url': f"https://anilibria.top/app/search?query={query_encoded}",
+                'quality': 'AniLibria / AniLiberty',
+                'badge': 'AniLibria',
+                'episodes': 'Онлайн',
+                'size_bytes': 0,
+                'size_str': 'Онлайн',
+                'source': 'online_anilibria'
+            },
+            {
+                'filename': f"Поиск RuTracker: {bm['rus']}",
+                'url': f"https://rutracker.org/forum/tracker.php?nm={query_encoded}",
+                'quality': 'RuTracker (Все озвучки)',
+                'badge': 'RuTracker',
+                'episodes': 'Онлайн',
+                'size_bytes': 0,
+                'size_str': 'Онлайн',
+                'source': 'online_rutracker'
+            },
+            {
+                'filename': f"Поиск Nyaa: {bm['orig']}",
+                'url': f"https://nyaa.si/?f=0&c=1_2&q={nyaa_encoded}",
+                'quality': 'Nyaa (Все озвучки / RAW)',
+                'badge': 'Nyaa.si',
+                'episodes': 'Онлайн',
+                'size_bytes': 0,
+                'size_str': 'Онлайн',
+                'source': 'online_nyaa'
+            }
+        ]
+
+        safe_name = safe(bm['rus'])[:70] + '.jpg'
+        local_p = os.path.join(POSTERS_DIR, bm['status'], safe_name)
+        poster_rel = ""
+        if os.path.exists(local_p) and os.path.getsize(local_p) > 500:
+            poster_rel = f"Постеры/{urllib.parse.quote(bm['status'])}/{urllib.parse.quote(safe_name)}"
             
+        online_p = ""
+        genres = []
+        desc = ""
+        s_id = None
+        
+        c = clean(bm['orig']) or clean(bm['rus'])
+        if bm['orig'] in shiki_cache:
+            s = shiki_cache[bm['orig']]
+            online_p = s.get('poster', '')
+            genres = s.get('genres', [])
+            desc = s.get('description', '')
+            s_id = s.get('shikimori_id')
+        elif c in alib_lookup:
+            rel = alib_lookup[c]
+            p = rel.get('poster', {}).get('src', '')
+            if p: online_p = f"https://anilibria.top{p}" if not p.startswith('http') else p
+            genres = [g['name'] for g in rel.get('genres', []) if isinstance(g, dict) and g.get('name')]
+            desc = rel.get('description', '')
+            s_id = rel.get('shikimori', {}).get('id') if isinstance(rel.get('shikimori'), dict) else None
+
+        if f_key not in franchises:
             franchises[f_key] = {
                 'id': len(franchises) + 1,
                 'f_key': f_key,
@@ -442,6 +513,9 @@ def main():
                 'rating': bm['rating'],
                 'poster': poster_rel,
                 'fallback_poster': online_p,
+                'genres': genres,
+                'description': desc,
+                'shikimori_id': s_id,
                 'seasons': {
                     s_label: {
                         'season_name': s_label,
@@ -449,42 +523,30 @@ def main():
                         'episodes': 'Онлайн поиск',
                         'status': bm['status'],
                         'rating': bm['rating'],
-                        'variants': [
-                            {
-                                'filename': f"Поиск AniLibria: {bm['rus']}",
-                                'url': f"https://anilibria.top/app/search?query={query_encoded}",
-                                'quality': 'AniLibria / AniLiberty',
-                                'badge': 'AniLibria',
-                                'episodes': 'Онлайн',
-                                'size_bytes': 0,
-                                'size_str': 'Онлайн',
-                                'source': 'online_anilibria'
-                            },
-                            {
-                                'filename': f"Поиск RuTracker: {bm['rus']}",
-                                'url': f"https://rutracker.org/forum/tracker.php?nm={query_encoded}",
-                                'quality': 'RuTracker (Все озвучки)',
-                                'badge': 'RuTracker',
-                                'episodes': 'Онлайн',
-                                'size_bytes': 0,
-                                'size_str': 'Онлайн',
-                                'source': 'online_rutracker'
-                            },
-                            {
-                                'filename': f"Поиск Nyaa: {bm['orig']}",
-                                'url': f"https://nyaa.si/?f=0&c=1_2&q={nyaa_encoded}",
-                                'quality': 'Nyaa (Все озвучки / RAW)',
-                                'badge': 'Nyaa.si',
-                                'episodes': 'Онлайн',
-                                'size_bytes': 0,
-                                'size_str': 'Онлайн',
-                                'source': 'online_nyaa'
-                            }
-                        ]
+                        'poster': poster_rel,
+                        'fallback_poster': online_p,
+                        'genres': genres,
+                        'description': desc,
+                        'variants': online_variants
                     }
                 }
             }
             missing_count += 1
+        else:
+            fr = franchises[f_key]
+            if s_label not in fr['seasons']:
+                fr['seasons'][s_label] = {
+                    'season_name': s_label,
+                    'season_rus': bm['rus'],
+                    'episodes': 'Онлайн поиск',
+                    'status': bm['status'],
+                    'rating': bm['rating'],
+                    'poster': poster_rel,
+                    'fallback_poster': online_p,
+                    'genres': genres,
+                    'description': desc,
+                    'variants': online_variants
+                }
 
     print(f"   Добавлено аниме из закладок с онлайн-раздачами: {missing_count}")
 
@@ -511,7 +573,7 @@ def main():
         final_franchise_list.append(data)
 
     print(f"   ИТОГО единых франшиз в каталоге: {len(final_franchise_list)}")
-    print("\n✅ Готово! Каталог_Аниме.html, Коллекция_Аниме.csv и Результаты_сортировки.txt обновлены.")
+    print("\n✅ Готово! Каталог_Аниме.html обновлен.")
 
 if __name__ == '__main__':
     main()
