@@ -1128,5 +1128,845 @@
     "source": "shikimori",
     "score": "7.41",
     "shikimori_id": 54850
+  },
+  "BlazBlue": {
+    "rus": "Лазурный гримуар: Другие воспоминания",
+    "eng": "BlazBlue: Alter Memory",
+    "poster": "https://shikimori.one/system/animes/original/18767.jpg?1711944116",
+    "shikimori_id": 18767,
+    "source": "shikimori_season_search"
+  },
+  "Charlotte Tsuyoimono": {
+    "rus": "Шарлотта: Сильные люди",
+    "eng": "Charlotte: Tsuyoimono-tachi",
+    "poster": "https://shikimori.one/system/animes/original/31553.jpg?1711945826",
+    "shikimori_id": 31553,
+    "source": "shikimori_season_search"
+  },
+  "Shingeki no Kyojin": {
+    "rus": "Атака титанов",
+    "eng": "Shingeki no Kyojin",
+    "poster": "https://shikimori.one/system/animes/original/16498.jpg?1711973439",
+    "shikimori_id": 16498,
+    "source": "shikimori_season_search"
+  },
+  "Choujin Koukousei": {
+    "rus": "Сверходарённым школьникам даже другой мир нипочём!",
+    "eng": "Choujin Koukousei-tachi wa Isekai demo Yoyuu de Ikinuku you desu!",
+    "poster": "https://shikimori.one/system/animes/original/39523.jpg?1711946259",
+    "shikimori_id": 39523,
+    "source": "shikimori_season_search"
+  },
+  "Великий приказ Первый приказ ／ Fate／Grand Order First Order": {
+    "rus": "Судьба/Великий приказ: Первый приказ",
+    "eng": "Fate/Grand Order: First Order",
+    "poster": "https://shikimori.one/system/animes/original/34321.jpg?1711949185",
+    "shikimori_id": 34321,
+    "source": "shikimori_season_search"
+  },
+  "Ночь схватки Бесконечный мир клинков. Фильм ／ Fate／stay night Movie Unlimited Blade Works": {
+    "rus": "Судьба/Ночь схватки: Бесконечный мир клинков. Фильм",
+    "eng": "Fate/stay night Movie: Unlimited Blade Works",
+    "poster": "https://shikimori.one/system/animes/original/6922.jpg?1711949246",
+    "shikimori_id": 6922,
+    "source": "shikimori_season_search"
+  },
+  "Ночь схватки Прикосновение небес 3 ／ Fate／stay night Movie Heaven's Feel": {
+    "rus": "Судьба/Ночь схватки: Прикосновение небес 3",
+    "eng": "Fate/stay night Movie: Heaven's Feel - III. Spring Song",
+    "poster": "https://shikimori.one/system/animes/original/33050.jpg?1711949281",
+    "shikimori_id": 33050,
+    "source": "shikimori_season_search"
+  },
+  "Go": {
+    "rus": "Вперёд, вперёд, Момон! Спецвыпуски",
+    "eng": "Ikeike! Momon-chan Specials",
+    "poster": "https://shikimori.one/system/animes/original/18425.jpg?1711954817",
+    "shikimori_id": 18425,
+    "source": "shikimori_season_search"
+  },
+  "Handa": {
+    "rus": "Ханда-кун",
+    "eng": "Handa-kun",
+    "poster": "https://shikimori.one/system/animes/original/32648.jpg?1711952627",
+    "shikimori_id": 32648,
+    "source": "shikimori_season_search"
+  },
+  "Gekkan Shoujo Nozaki": {
+    "rus": "Ежемесячное сёдзё Нодзаки",
+    "eng": "Gekkan Shoujo Nozaki-kun",
+    "poster": "https://shikimori.one/system/animes/original/23289.jpg?1711952127",
+    "shikimori_id": 23289,
+    "source": "shikimori_season_search"
+  },
+  "Hell Mode Yarikomizuki no Gamer wa Hai Settei no Isekai de ...": {
+    "rus": "Адский режим: Геймер, который любит спидран, становится бесподобным в параллельном мире с устаревшими настройками",
+    "eng": "Hell Mode: Yarikomizuki no Gamer wa Hai Settei no Isekai de Musou suru",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 60460,
+    "source": "shikimori_season_search"
+  },
+  "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Ta...": {
+    "rus": "Королева, ставшая причиной трагедии, сделает для народа всё, что в её силах",
+    "eng": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu.",
+    "poster": "https://shikimori.one/system/animes/original/53438.jpg?1710730283",
+    "shikimori_id": 53438,
+    "source": "shikimori_season_search"
+  },
+  "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu.": {
+    "rus": "Королева, ставшая причиной трагедии, сделает для народа всё, что в её силах",
+    "eng": "Higeki no Genkyou to Naru Saikyou Gedou Last Boss Joou wa Tami no Tame ni Tsukushimasu.",
+    "poster": "https://shikimori.one/system/animes/original/53438.jpg?1710730283",
+    "shikimori_id": 53438,
+    "source": "shikimori_season_search"
+  },
+  "Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Om...": {
+    "rus": "Не люблю боль, поэтому собираюсь вложить всё в защиту",
+    "eng": "Itai no wa Iya nanode Bougyoryoku ni Kyokufuri Shitai to Omoimasu.",
+    "poster": "https://shikimori.one/system/animes/original/38790.jpg?1711955366",
+    "shikimori_id": 38790,
+    "source": "shikimori_season_search"
+  },
+  "Boukensha ni Naritai to Miyako ni Deteitta Musume ga S": {
+    "rus": "Моя дочь, отправившаяся в столицу, захотев стать авантюристом, достигла S-ранга",
+    "eng": "Boukensha ni Naritai to Miyako ni Deteitta Musume ga S-Rank ni Natteta",
+    "poster": "https://shikimori.one/system/animes/original/53494.jpg?1710730148",
+    "shikimori_id": 53494,
+    "source": "shikimori_season_search_ru"
+  },
+  "Hazure Skill Kinomi Master Skill no Mi (Tabetara Shinu) w...": {
+    "rus": "Парадоксальный навык «Мастер фруктов»: Навык, позволяющий есть бесконечное число фруктов (правда, вы умрёте, лишь откусив их): Мини-аниме",
+    "eng": "Hazure Skill \"Kinomi Master\": Skill no Mi (Tabetara Shinu) wo Mugen ni Taberareru You ni Natta Ken ni Tsuite Mini Anime",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 61534,
+    "source": "shikimori_season_search"
+  },
+  "Jaku": {
+    "rus": "Низкоуровневый персонаж Томодзаки: Вторая стадия",
+    "eng": "Jaku-Chara Tomozaki-kun 2nd Stage",
+    "poster": "https://shikimori.one/system/animes/original/50803.jpg?1718592412",
+    "shikimori_id": 50803,
+    "source": "shikimori_season_search"
+  },
+  "K": {
+    "rus": "Проект Кей",
+    "eng": "K",
+    "poster": "https://shikimori.one/system/animes/original/14467.jpg?1711956799",
+    "shikimori_id": 14467,
+    "source": "shikimori_season_search"
+  },
+  "Kaijuu 8": {
+    "rus": "История призрака. Восемь легенд о Хатисяку",
+    "eng": "8-shaku 8-wa Kerakumeguri: Igyou Kaikitan The Animation",
+    "poster": "https://shikimori.one/system/animes/original/33865.jpg?1711937890",
+    "shikimori_id": 33865,
+    "source": "shikimori_season_search_ru"
+  },
+  "Kuaile Meng Duo Duo": {
+    "rus": "Весёлый Мэндодо",
+    "eng": "Kuaile Meng Duo Duo",
+    "poster": "https://shikimori.one/system/animes/original/46695.jpg?1711959952",
+    "shikimori_id": 46695,
+    "source": "shikimori_season_search_ru"
+  },
+  "Kara no Kyoukai Movie 1 Fukan Fuukei": {
+    "rus": "Граница пустоты 1: Вид с высоты",
+    "eng": "Kara no Kyoukai Movie 1: Fukan Fuukei",
+    "poster": "https://shikimori.one/system/animes/original/2593.jpg?1711957622",
+    "shikimori_id": 2593,
+    "source": "shikimori_season_search"
+  },
+  "Kaiko Sareta Ankoku Heishi (30": {
+    "rus": "Неспешная жизнь уволенного тёмного солдата (тридцати лет)",
+    "eng": "Kaiko sareta Ankoku Heishi (30-dai) no Slow na Second Life",
+    "poster": "https://shikimori.one/system/animes/original/52446.jpg?1713147062",
+    "shikimori_id": 52446,
+    "source": "shikimori_season_search"
+  },
+  "Kaguya": {
+    "rus": "Сказание о принцессе Кагуя",
+    "eng": "Kaguya-hime no Monogatari",
+    "poster": "https://shikimori.one/system/animes/original/16664.jpg?1711956988",
+    "shikimori_id": 16664,
+    "source": "shikimori_season_search"
+  },
+  "Kara no Kyoukai Movie 2 Satsujin Kousatsu (Zen)": {
+    "rus": "Граница пустоты 2: Теория убийства  — Часть 1",
+    "eng": "Kara no Kyoukai Movie 2: Satsujin Kousatsu (Zen)",
+    "poster": "https://shikimori.one/system/animes/original/3782.jpg?1711957652",
+    "shikimori_id": 3782,
+    "source": "shikimori_season_search"
+  },
+  "Kara no Kyoukai Movie 5 Mujun Rasen": {
+    "rus": "Граница пустоты 5: Спираль парадокса",
+    "eng": "Kara no Kyoukai Movie 5: Mujun Rasen",
+    "poster": "https://shikimori.one/system/animes/original/4282.jpg?1711957609",
+    "shikimori_id": 4282,
+    "source": "shikimori_season_search"
+  },
+  "Kara no Kyoukai Movie 4 Garan no Dou": {
+    "rus": "Граница пустоты 4: Храм пустоты",
+    "eng": "Kara no Kyoukai Movie 4: Garan no Dou",
+    "poster": "https://shikimori.one/system/animes/original/4280.jpg?1711957638",
+    "shikimori_id": 4280,
+    "source": "shikimori_season_search"
+  },
+  "Kara no Kyoukai Movie 8 Shuushou": {
+    "rus": "Граница пустоты 8: Эпилог",
+    "eng": "Kara no Kyoukai Movie 8: Shuushou",
+    "poster": "https://shikimori.one/system/animes/original/6954.jpg?1711957617",
+    "shikimori_id": 6954,
+    "source": "shikimori_season_search"
+  },
+  "Kara no Kyoukai Movie 6 Boukyaku Rokuon": {
+    "rus": "Граница пустоты 6: Мелодия забвения",
+    "eng": "Kara no Kyoukai Movie 6: Boukyaku Rokuon",
+    "poster": "https://shikimori.one/system/animes/original/5204.jpg?1711957669",
+    "shikimori_id": 5204,
+    "source": "shikimori_season_search"
+  },
+  "Kara no Kyoukai Movie 7 Satsujin Kousatsu (Go)": {
+    "rus": "Граница пустоты 7: Теория убийства — Часть 2",
+    "eng": "Kara no Kyoukai Movie 7: Satsujin Kousatsu (Go)",
+    "poster": "https://shikimori.one/system/animes/original/5205.jpg?1711957665",
+    "shikimori_id": 5205,
+    "source": "shikimori_season_search"
+  },
+  "Kinsou no Vermeil Gakeppuchi Majutsushi wa Saikyou no Yakus...": {
+    "rus": "Вермейл в золотом: Сильнейший маг проходит через магический мир с сильнейшей катастрофой",
+    "eng": "Kinsou no Vermeil: Gakeppuchi Majutsushi wa Saikyou no Yakusai to Mahou Sekai wo Tsukisusumu",
+    "poster": "https://shikimori.one/system/animes/original/51213.jpg?1713754440",
+    "shikimori_id": 51213,
+    "source": "shikimori_season_search"
+  },
+  "Kono Subarashii Sekai ni Shukufuku wo! Movie Kurenai Densetsu": {
+    "rus": "Этот замечательный мир! Багровая легенда",
+    "eng": "Kono Subarashii Sekai ni Shukufuku wo! Movie: Kurenai Densetsu",
+    "poster": "https://shikimori.one/system/animes/original/38040.jpg?1711959620",
+    "shikimori_id": 38040,
+    "source": "shikimori_season_search"
+  },
+  "Kimi to Boku no Saigo no Senjou, Aruiwa Sekai ga Hajimaru Se...": {
+    "rus": "Последнее поле брани между тобой и мной, или Святая война сотворения мира 2",
+    "eng": "Kimi to Boku no Saigo no Senjou, Aruiwa Sekai ga Hajimaru Seisen Season II",
+    "poster": "https://shikimori.one/system/animes/original/49981.jpg?1714590939",
+    "shikimori_id": 49981,
+    "source": "shikimori_season_search"
+  },
+  "Kao ni Denai Kashiwada": {
+    "rus": "Безэмоциональная Касивада и эмоциональный Ота",
+    "eng": "Kao ni Denai Kashiwada-san to Kao ni Deru Oota-kun",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 61209,
+    "source": "shikimori_season_search_ru"
+  },
+  "Mahou Shoujo Madoka★Magica Movie 3 Hangyaku no Monogatari": {
+    "rus": "Девочка-волшебница Мадока★Волшебный фильм 3: История восстания — Спецвыпуски",
+    "eng": "Mahou Shoujo Madoka★Magica Movie 3: Hangyaku no Monogatari - Magica Quartet x Nisioisin",
+    "poster": "https://shikimori.one/system/animes/original/23831.jpg?1711962348",
+    "shikimori_id": 23831,
+    "source": "shikimori_season_search"
+  },
+  "Mairimashita! Iruma": {
+    "rus": "Добро пожаловать в ад, Ирума!",
+    "eng": "Mairimashita! Iruma-kun",
+    "poster": "https://shikimori.one/system/animes/original/39196.jpg?1711962544",
+    "shikimori_id": 39196,
+    "source": "shikimori_season_search"
+  },
+  "Maken": {
+    "rus": "Макен-Ки! 2",
+    "eng": "Maken-Ki! Two",
+    "poster": "https://shikimori.one/system/animes/original/15565.jpg?1711962590",
+    "shikimori_id": 15565,
+    "source": "shikimori_season_search"
+  },
+  "Masamune": {
+    "rus": "Месть Масамунэ!",
+    "eng": "Masamune-kun no Revenge",
+    "poster": "https://shikimori.one/system/animes/original/33487.jpg?1711962963",
+    "shikimori_id": 33487,
+    "source": "shikimori_season_search"
+  },
+  "Mondaiji": {
+    "rus": "Проблемные дети приходят из иного мира, верно?",
+    "eng": "Mondaiji-tachi ga Isekai kara Kuru Sou desu yo?",
+    "poster": "https://shikimori.one/system/animes/original/15315.jpg?1711964419",
+    "shikimori_id": 15315,
+    "source": "shikimori_season_search"
+  },
+  "Shinjiteita Nakama": {
+    "rus": "Я был предан товарищами в глубине подземелья, но благодаря своему навыку «Бесконечная гача» я обрёл союзников девять тысяч девятьсот девяносто девятого уровня, чтобы отомстить бывшим соратникам и всему миру!",
+    "eng": "Shinjiteita Nakama-tachi ni Dungeon Okuchi de Korosarekaketa ga Gift \"Mugen Gacha\" de Level 9999 no Nakama-tachi wo Te ni Irete Moto Party Member to Sekai ni Fukushuu & \"Zamaa!\" Shimasu!",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 60303,
+    "source": "shikimori_season_search"
+  },
+  "Nanatsu no Taizai Movie 1 Tenkuu no Torawarebito": {
+    "rus": "Семь смертных грехов: Узники небес",
+    "eng": "Nanatsu no Taizai Movie 1: Tenkuu no Torawarebito",
+    "poster": "https://shikimori.one/system/animes/original/35946.jpg?1711965553",
+    "shikimori_id": 35946,
+    "source": "shikimori_season_search"
+  },
+  "Otonari no Tenshi": {
+    "rus": "Ангел по соседству",
+    "eng": "Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken",
+    "poster": "https://shikimori.one/system/animes/original/50739.jpg?1713148963",
+    "shikimori_id": 50739,
+    "source": "shikimori_season_search"
+  },
+  "Pa": {
+    "rus": "Бронеотряд тысяча девятьсот сорок первого",
+    "eng": "Kishin Heidan",
+    "poster": "https://shikimori.one/system/animes/original/3061.jpg?1711958920",
+    "shikimori_id": 3061,
+    "source": "shikimori_season_search"
+  },
+  "ReZero kara Hajimeru Isekai Seikatsu": {
+    "rus": "Re:Petit. Жизнь с малого в альтернативном мире",
+    "eng": "Re:Petit kara Hajimeru Isekai Seikatsu",
+    "poster": "https://shikimori.one/system/animes/original/33569.jpg?1711970086",
+    "shikimori_id": 33569,
+    "source": "shikimori_season_search"
+  },
+  "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tense...": {
+    "rus": "Моя реинкарнация в отомэ-игре в качестве главной злодейки",
+    "eng": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+    "poster": "https://shikimori.one/system/animes/original/38555.jpg?1711968083",
+    "shikimori_id": 38555,
+    "source": "shikimori_season_search"
+  },
+  "Kore wa Zombie Desu ka Of The Dead [TV": {
+    "rus": "Уж не зомби ли это?",
+    "eng": "Kore wa Zombie desu ka?",
+    "poster": "https://shikimori.one/system/animes/original/8841.jpg?1711959637",
+    "shikimori_id": 8841,
+    "source": "shikimori_season_search_ru"
+  },
+  "Sewayaki Kitsune no Senko": {
+    "rus": "Заботливая 800-летняя жена!",
+    "eng": "Sewayaki Kitsune no Senko-san",
+    "poster": "https://shikimori.one/system/animes/original/38759.jpg?1711972625",
+    "shikimori_id": 38759,
+    "source": "shikimori_season_search"
+  },
+  "Shigatsu wa Kimi no Uso Moments": {
+    "rus": "Твоя апрельская ложь: Моменты",
+    "eng": "Shigatsu wa Kimi no Uso: Moments",
+    "poster": "https://shikimori.one/system/animes/original/28069.jpg?1711973159",
+    "shikimori_id": 28069,
+    "source": "shikimori_season_search"
+  },
+  "Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node,...": {
+    "rus": "Меня выгнали из гильдии героев, потому что я был плохим компаньоном, поэтому я решил неспешно жить в глуши",
+    "eng": "Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node, Henkyou de Slow Life suru Koto ni Shimashita",
+    "poster": "https://shikimori.one/system/animes/original/44037.jpg?1711973406",
+    "shikimori_id": 44037,
+    "source": "shikimori_season_search"
+  },
+  "Shouwa Genroku Rakugo Shinjuu Sukeroku Futatabi": {
+    "rus": "Сёва-Гэнроку: Двойное самоубийство по ракуго 2",
+    "eng": "Shouwa Genroku Rakugo Shinjuu: Sukeroku Futatabi-hen",
+    "poster": "https://shikimori.one/system/animes/original/33095.jpg?1711974122",
+    "shikimori_id": 33095,
+    "source": "shikimori_season_search"
+  },
+  "Ginban Kaleidoscope": {
+    "rus": "Фигурный калейдоскоп",
+    "eng": "Ginban Kaleidoscope",
+    "poster": "https://shikimori.one/system/animes/original/476.jpg?1711951103",
+    "shikimori_id": 476,
+    "source": "shikimori_season_search"
+  },
+  "Slime Taoshite 300": {
+    "rus": "Убивая слизней триста лет, сама того не заметив, я достигла максимального уровня 2",
+    "eng": "Slime Taoshite 300-nen, Shiranai Uchi ni Level Max ni Nattemashita: Sono Ni",
+    "poster": "https://shikimori.one/system/animes/original/50738.jpg?1714590918",
+    "shikimori_id": 50738,
+    "source": "shikimori_season_search"
+  },
+  "Shuumatsu no Walküre II Part 2": {
+    "rus": "Повесть о конце света 2. Часть 2",
+    "eng": "Shuumatsu no Walküre II Part 2",
+    "poster": "https://shikimori.one/system/animes/original/55454.jpg?1716771013",
+    "shikimori_id": 55454,
+    "source": "shikimori_season_search"
+  },
+  "ReZero kara Hajimeru Isekai Seikatsu 3rd Season": {
+    "rus": "Re:Zero. Жизнь с нуля в альтернативном мире: Снежные воспоминания",
+    "eng": "Re:Zero kara Hajimeru Isekai Seikatsu - Memory Snow",
+    "poster": "https://shikimori.one/system/animes/original/36286.jpg?1711970112",
+    "shikimori_id": 36286,
+    "source": "shikimori_season_search_ru"
+  },
+  "Tensei shitara Slime Datta Ken 2nd Season Part 2": {
+    "rus": "О моём перерождении в слизь 2. Часть 2",
+    "eng": "Tensei shitara Slime Datta Ken 2nd Season Part 2",
+    "poster": "https://shikimori.one/system/animes/original/41487.jpg?1711977051",
+    "shikimori_id": 41487,
+    "source": "shikimori_season_search"
+  },
+  "Tensei shitara Slime Datta Ken Movie Guren no Kizuna": {
+    "rus": "О моём перерождении в слизь: Алые узы",
+    "eng": "Tensei shitara Slime Datta Ken Movie: Guren no Kizuna-hen",
+    "poster": "https://shikimori.one/system/animes/original/49877.jpg?1709524281",
+    "shikimori_id": 49877,
+    "source": "shikimori_season_search"
+  },
+  "Tensei Kizoku no Isekai Boukenroku Jichou wo Shiranai Kamig...": {
+    "rus": "Невообразимые приключения перерождённого дворянина",
+    "eng": "Tensei Kizoku no Isekai Boukenroku: Jichou wo Shiranai Kamigami no Shito",
+    "poster": "https://shikimori.one/system/animes/original/52608.jpg?1710731740",
+    "shikimori_id": 52608,
+    "source": "shikimori_season_search"
+  },
+  "Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo...": {
+    "rus": "Перевоплотился в седьмого принца, так что я буду совершенствовать свою магию, как захочу",
+    "eng": "Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu",
+    "poster": "https://shikimori.one/system/animes/original/53516.jpg?1718207142",
+    "shikimori_id": 53516,
+    "source": "shikimori_season_search"
+  },
+  "Tokidoki Bosotto Russia": {
+    "rus": "Аля иногда кокетничает со мной по-русски",
+    "eng": "Tokidoki Bosotto Russia-go de Dereru Tonari no Alya-san",
+    "poster": "https://shikimori.one/system/animes/original/54744.jpg?1718725558",
+    "shikimori_id": 54744,
+    "source": "shikimori_season_search"
+  },
+  "To LOVE": {
+    "rus": "Пышечка, любовь и ошибки!",
+    "eng": "Debu to Love to Ayamachi to!",
+    "poster": "https://shikimori.one/system/animes/original/57189.jpg?1715975128",
+    "shikimori_id": 57189,
+    "source": "shikimori_season_search"
+  },
+  "Uzaki": {
+    "rus": "Удзаки хочет тусоваться!",
+    "eng": "Uzaki-chan wa Asobitai!",
+    "poster": "https://shikimori.one/system/animes/original/41226.jpg?1711979629",
+    "shikimori_id": 41226,
+    "source": "shikimori_season_search"
+  },
+  "Yamada": {
+    "rus": "Второй размер, интим предлагать!",
+    "eng": "B-gata H-kei",
+    "poster": "https://shikimori.one/system/animes/original/7817.jpg?1711943044",
+    "shikimori_id": 7817,
+    "source": "shikimori_season_search"
+  },
+  "Jigokuraku": {
+    "rus": "Адский рай",
+    "eng": "Jigokuraku",
+    "poster": "https://shikimori.one/system/animes/original/46569.jpg?1711955691",
+    "shikimori_id": 46569,
+    "source": "shikimori_season_search"
+  },
+  "": {
+    "rus": "Стальной алхимик: Священная звезда Милоса",
+    "eng": "Fullmetal Alchemist: The Sacred Star of Milos",
+    "poster": "https://shikimori.one/system/animes/original/9135.jpg?1711949802",
+    "shikimori_id": 9135,
+    "source": "shikimori_season_search"
+  },
+  "Animegataris": {
+    "rus": "Аниме-истории",
+    "eng": "Animegataris",
+    "poster": "https://shikimori.one/system/animes/original/35427.jpg?1711941179",
+    "shikimori_id": 35427,
+    "source": "shikimori_season_search"
+  },
+  "Mashiro-iro Symphony": {
+    "rus": "Белоснежная симфония: Цвет влюблённых",
+    "eng": "Mashiro-iro Symphony: The Color of Lovers",
+    "poster": "https://shikimori.one/system/animes/original/10397.jpg?1711963033",
+    "shikimori_id": 10397,
+    "source": "shikimori_season_search"
+  },
+  "Grappler Baki (TV)": {
+    "rus": "Боец Баки",
+    "eng": "Grappler Baki (TV)",
+    "poster": "https://shikimori.one/system/animes/original/287.jpg?1711951808",
+    "shikimori_id": 287,
+    "source": "shikimori_season_search"
+  },
+  "Majo no Takkyuubin": {
+    "rus": "Ведьмина служба доставки",
+    "eng": "Majo no Takkyuubin",
+    "poster": "https://shikimori.one/system/animes/original/512.jpg?1711962494",
+    "shikimori_id": 512,
+    "source": "shikimori_season_search"
+  },
+  "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru": {
+    "rus": "Что будет делать сильнейший король в своей второй жизни?",
+    "eng": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru?",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 60146,
+    "source": "shikimori_season_search_ru"
+  },
+  "Dakara Boku wa, H ga Dekinai!": {
+    "rus": "Говорю же, у меня не встаёт!",
+    "eng": "Dakara Boku wa, H ga Dekinai.",
+    "poster": "https://shikimori.one/system/animes/original/12549.jpg?1711947148",
+    "shikimori_id": 12549,
+    "source": "shikimori_season_search"
+  },
+  "Wakako-zake": {
+    "rus": "Сакэ Вакако",
+    "eng": "Wakako-zake",
+    "poster": "https://shikimori.one/system/animes/original/30437.jpg?1711979868",
+    "shikimori_id": 30437,
+    "source": "shikimori_season_search"
+  },
+  "Isekai Meikyuu de Harem wo": {
+    "rus": "Гарем рабов в лабиринте другого мира",
+    "eng": "Isekai Meikyuu de Harem wo",
+    "poster": "https://shikimori.one/system/animes/original/44524.jpg?1711955296",
+    "shikimori_id": 44524,
+    "source": "shikimori_season_search"
+  },
+  "Wangu Xian Qiong": {
+    "rus": "Вечный бессмертный небосвод",
+    "eng": "Wangu Xian Qiong",
+    "poster": "https://shikimori.one/system/animes/original/36148.jpg?1711980054",
+    "shikimori_id": 36148,
+    "source": "shikimori_season_search"
+  },
+  "Beelzebub: Hirotta Akachan wa Daimaou!?": {
+    "rus": "Вельзепуз: Малыш, которого я подобрал, — Король демонов?!",
+    "eng": "Beelzebub: Hirotta Akachan wa Daimaou!?",
+    "poster": "https://shikimori.one/system/animes/original/9120.jpg?1711943782",
+    "shikimori_id": 9120,
+    "source": "shikimori_season_search"
+  },
+  "Kizetsu Yuusha to Ansatsu Hime": {
+    "rus": "Герой, упавший в обморок, и принцессы-убийцы",
+    "eng": "Kizetsu Yuusha to Ansatsu Hime",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 60951,
+    "source": "shikimori_season_search"
+  },
+  "- 1": {
+    "rus": "Сто девушек, которые очень-очень-очень-очень-очень сильно тебя любят",
+    "eng": "Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo",
+    "poster": "https://shikimori.one/system/animes/original/54714.jpg?1711329446",
+    "shikimori_id": 54714,
+    "source": "shikimori_season_search_ru"
+  },
+  "Watari-kun no xx ga Houkai Sunzen": {
+    "rus": "Ватари на грани краха",
+    "eng": "Watari-kun no xx ga Houkai Sunzen",
+    "poster": "https://shikimori.one/system/animes/original/56693.jpg?1718957754",
+    "shikimori_id": 56693,
+    "source": "shikimori_season_search_ru"
+  },
+  "Yagate Kimi ni Naru": {
+    "rus": "В конечном счёте я стану твоей",
+    "eng": "Yagate Kimi ni Naru",
+    "poster": "https://shikimori.one/system/animes/original/37786.jpg?1711982031",
+    "shikimori_id": 37786,
+    "source": "shikimori_season_search_ru"
+  },
+  "Kawaikereba Hentai demo Suki ni Natte Kuremasu ka?": {
+    "rus": "Полюбишь ли ты извращенку, если она милая?",
+    "eng": "Kawaikereba Hentai demo Suki ni Natte Kuremasu ka?",
+    "poster": "https://shikimori.one/system/animes/original/39326.jpg?1711957836",
+    "shikimori_id": 39326,
+    "source": "shikimori_season_search"
+  },
+  "Replica datte, Koi wo Suru": {
+    "rus": "Даже копия способна влюбиться",
+    "eng": "Replica datte, Koi wo Suru.",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 61013,
+    "source": "shikimori_season_search"
+  },
+  "Seiyuu Radio no Uraomote": {
+    "rus": "Две стороны сэйю радио",
+    "eng": "Seiyuu Radio no Uraomote",
+    "poster": "https://shikimori.one/system/animes/original/53912.jpg?1718844584",
+    "shikimori_id": 53912,
+    "source": "shikimori_season_search"
+  },
+  "Tsuihousha Shokudou e Youkoso!": {
+    "rus": "Добро пожаловать в дешёвый ресторан изгнанника!",
+    "eng": "Tsuihousha Shokudou e Youkoso!",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 60523,
+    "source": "shikimori_season_search"
+  },
+  "RPG Fudousan": {
+    "rus": "РПГ недвижимость",
+    "eng": "RPG Fudousan",
+    "poster": "https://shikimori.one/system/animes/original/48363.jpg?1708760300",
+    "shikimori_id": 48363,
+    "source": "shikimori_season_search"
+  },
+  "Romantic Killer": {
+    "rus": "Романтический убийца",
+    "eng": "Romantic Killer",
+    "poster": "https://shikimori.one/system/animes/original/52865.jpg?1711936038",
+    "shikimori_id": 52865,
+    "source": "shikimori_season_search"
+  },
+  "Sasami-san@Ganbaranai": {
+    "rus": "Сасами-сан@Лентяйничество",
+    "eng": "Sasami-san@Ganbaranai",
+    "poster": "https://shikimori.one/system/animes/original/14515.jpg?1711972049",
+    "shikimori_id": 14515,
+    "source": "shikimori_season_search"
+  },
+  "Mai Zhu": {
+    "rus": "Свинья на продажу",
+    "eng": "Mai Zhu",
+    "poster": "https://shikimori.one/system/animes/original/20713.jpg?1711962409",
+    "shikimori_id": 20713,
+    "source": "shikimori_season_search"
+  },
+  "Rougo ni S": {
+    "rus": "Этот замечательный мир! 2: Благословение этому замечательному искусству!",
+    "eng": "Kono Subarashii Sekai ni Shukufuku wo! 2: Kono Subarashii Geijutsu ni Shukufuku wo!",
+    "poster": "https://shikimori.one/system/animes/original/34626.jpg?1711959568",
+    "shikimori_id": 34626,
+    "source": "shikimori_season_search"
+  },
+  "Cike Wu Liuqi": {
+    "rus": "Седьмой киллер",
+    "eng": "Cike Wu Liuqi",
+    "poster": "https://shikimori.one/system/animes/original/38409.jpg?1711946399",
+    "shikimori_id": 38409,
+    "source": "shikimori_season_search"
+  },
+  "Senran Kagura": {
+    "rus": "Секретное назначение девушек-ниндзя",
+    "eng": "Senran Kagura",
+    "poster": "https://shikimori.one/system/animes/original/15119.jpg?1711972589",
+    "shikimori_id": 15119,
+    "source": "shikimori_season_search"
+  },
+  "Nogizaka Haruka no Himitsu": {
+    "rus": "Секрет Харуки Ногидзаки",
+    "eng": "Nogizaka Haruka no Himitsu",
+    "poster": "https://shikimori.one/system/animes/original/3467.jpg?1711966478",
+    "shikimori_id": 3467,
+    "source": "shikimori_season_search"
+  },
+  "Happy New Year": {
+    "rus": "Универсальная современная девушка-кошка: Спецвыпуски",
+    "eng": "Bannou Bunka Neko-Musume Specials",
+    "poster": "https://shikimori.one/system/animes/original/3232.jpg?1711943503",
+    "shikimori_id": 3232,
+    "source": "shikimori_season_search"
+  },
+  "Kokoro ga Sakebitagatterunda.": {
+    "rus": "Сердцу хочется кричать",
+    "eng": "Kokoro ga Sakebitagatterunda.",
+    "poster": "https://shikimori.one/system/animes/original/28725.jpg?1711959327",
+    "shikimori_id": 28725,
+    "source": "shikimori_season_search"
+  },
+  "Minami ke": {
+    "rus": "Сёстры Минами",
+    "eng": "Minami-ke",
+    "poster": "https://shikimori.one/system/animes/original/2963.jpg?1711963886",
+    "shikimori_id": 2963,
+    "source": "shikimori_season_search"
+  },
+  "Blue Lock": {
+    "rus": "Синяя тюрьма: Блю Лок",
+    "eng": "Blue Lock",
+    "poster": "https://shikimori.one/system/animes/original/49596.jpg?1711944212",
+    "shikimori_id": 49596,
+    "source": "shikimori_season_search"
+  },
+  "Suki-tte Ii na yo": {
+    "rus": "Скажи: «Я люблю тебя»",
+    "eng": "Suki tte Ii na yo.",
+    "poster": "https://shikimori.one/system/animes/original/14289.jpg?1711975416",
+    "shikimori_id": 14289,
+    "source": "shikimori_season_search"
+  },
+  "Happy Sugar Life": {
+    "rus": "Сладкая жизнь",
+    "eng": "Happy Sugar Life",
+    "poster": "https://shikimori.one/system/animes/original/37517.jpg?1704549713",
+    "shikimori_id": 37517,
+    "source": "shikimori_season_search"
+  },
+  "Chitose-kun wa Ramune Bin no Naka": {
+    "rus": "Титосэ внутри бутылки рамунэ",
+    "eng": "Chitose-kun wa Ramune Bin no Naka",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 59517,
+    "source": "shikimori_season_search"
+  },
+  "Wotaku ni Koi wa Muzukashii: Youth": {
+    "rus": "Так сложно любить отаку",
+    "eng": "Wotaku ni Koi wa Muzukashii",
+    "poster": "https://shikimori.one/system/animes/original/35968.jpg?1711980660",
+    "shikimori_id": 35968,
+    "source": "shikimori_season_search"
+  },
+  "Shuumatsu no Harem": {
+    "rus": "Тотальный гарем",
+    "eng": "Shuumatsu no Harem",
+    "poster": "https://shikimori.one/system/animes/original/41946.jpg?1711974278",
+    "shikimori_id": 41946,
+    "source": "shikimori_season_search"
+  },
+  "30 sai made Doutei dato Mahoutsukai ni Nareru Rashii": {
+    "rus": "Тридцатилетний девственник может стать волшебником?",
+    "eng": "30-sai made Doutei dato Mahoutsukai ni Nareru Rashii",
+    "poster": "https://shikimori.one/system/animes/original/55973.jpg?1711079182",
+    "shikimori_id": 55973,
+    "source": "shikimori_season_search"
+  },
+  "Zanting! Rang Wo Cha Gonglüe": {
+    "rus": "Секунду! Нужно свериться с гайдом",
+    "eng": "Zanting! Rang Wo Cha Gonglue",
+    "poster": "https://shikimori.one/system/animes/original/50571.jpg?1713755017",
+    "shikimori_id": 50571,
+    "source": "shikimori_season_search_ru"
+  },
+  "Tonikaku Kawaii: Kaisou": {
+    "rus": "Унеси меня на Луну: Воспоминания",
+    "eng": "Tonikaku Kawaii: Kaisou",
+    "poster": "https://shikimori.one/system/animes/original/45598.jpg?1711978183",
+    "shikimori_id": 45598,
+    "source": "shikimori_season_search"
+  },
+  "Tonikaku Kawaii: Seifuku": {
+    "rus": "Унеси меня на Луну: Униформа",
+    "eng": "Tonikaku Kawaii: Seifuku",
+    "poster": "https://shikimori.one/system/animes/original/51533.jpg?1709521780",
+    "shikimori_id": 51533,
+    "source": "shikimori_season_search"
+  },
+  "Marika-chan no Koukando wa Bukkowareteiru": {
+    "rus": "Уровень симпатии Марики ненормально высокий!",
+    "eng": "Marika-chan no Koukando wa Bukkowareteiru",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 62983,
+    "source": "shikimori_season_search"
+  },
+  "Isekai Nonbiri Nouka": {
+    "rus": "Фермерская жизнь в ином мире",
+    "eng": "Isekai Nonbiri Nouka",
+    "poster": "https://shikimori.one/system/animes/original/51462.jpg?1713754042",
+    "shikimori_id": 51462,
+    "source": "shikimori_season_search"
+  },
+  "Fuguushoku Kanteishi\" ga Jitsu wa Saikyou Datta\"": {
+    "rus": "Худшая работа «оценщика» оказалась самой сильной",
+    "eng": "Fuguushoku \"Kanteishi\" ga Jitsu wa Saikyou Datta",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 59144,
+    "source": "shikimori_season_search"
+  },
+  "Chain Chronicle: Short Animation": {
+    "rus": "Цепные хроники OVA",
+    "eng": "Chain Chronicle: Short Animation",
+    "poster": "https://shikimori.one/system/animes/original/25431.jpg?1711945640",
+    "shikimori_id": 25431,
+    "source": "shikimori_season_search"
+  },
+  "Campione!": {
+    "rus": "Чемпион!",
+    "eng": "Campione! Matsurowanu Kamigami to Kamigoroshi no Maou",
+    "poster": "https://shikimori.one/system/animes/original/12293.jpg?1711944964",
+    "shikimori_id": 12293,
+    "source": "shikimori_season_search"
+  },
+  "Ai no Utagoe wo Kikasete": {
+    "rus": "Спой немного гармонии",
+    "eng": "Ai no Utagoe wo Kikasete",
+    "poster": "https://shikimori.one/system/animes/original/42847.jpg?1711938873",
+    "shikimori_id": 42847,
+    "source": "shikimori_season_search_ru"
+  },
+  "Foodt de, Mata Ashita": {
+    "rus": "Увидимся завтра в ресторанном дворике",
+    "eng": "Food Court de, Mata Ashita.",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 60508,
+    "source": "shikimori_season_search_ru"
+  },
+  "Aishen Qiaokeli-ing...": {
+    "rus": "Шоколад Купидона",
+    "eng": "Aishen Qiaokeli-ing...",
+    "poster": "https://shikimori.one/system/animes/original/32323.jpg?1711939041",
+    "shikimori_id": 32323,
+    "source": "shikimori_season_search"
+  },
+  "No.6": {
+    "rus": "Шестая зона",
+    "eng": "No.6",
+    "poster": "https://shikimori.one/system/animes/original/10161.jpg?1711966449",
+    "shikimori_id": 10161,
+    "source": "shikimori_season_search"
+  },
+  "Grisaia no Rakuen": {
+    "rus": "Рай Грисайи",
+    "eng": "Grisaia no Rakuen",
+    "poster": "https://shikimori.one/system/animes/original/29095.jpg?1711951892",
+    "shikimori_id": 29095,
+    "source": "shikimori_season_search"
+  },
+  "Akane-Iro ni Somaru Saka": {
+    "rus": "Холм в багряных сумерках",
+    "eng": "Akaneiro ni Somaru Saka",
+    "poster": "https://shikimori.one/system/animes/original/4744.jpg?1711939334",
+    "shikimori_id": 4744,
+    "source": "shikimori_season_search_ru"
+  },
+  "Dogeza de Tanondemita": {
+    "rus": "Я пытался уговорить её в догэдза",
+    "eng": "Dogeza de Tanondemita",
+    "poster": "https://shikimori.one/system/animes/original/42571.jpg?1711947801",
+    "shikimori_id": 42571,
+    "source": "shikimori_season_search"
+  },
+  "Mayo Chiki!": {
+    "rus": "Эй, цыпочка!",
+    "eng": "Mayo Chiki!",
+    "poster": "https://shikimori.one/system/animes/original/10110.jpg?1711963126",
+    "shikimori_id": 10110,
+    "source": "shikimori_season_search"
+  },
+  "Temple": {
+    "rus": "Храм: Никто не может жить в одиночестве",
+    "eng": "Temple",
+    "poster": "https://shikimori.one/system/animes/original/54275.jpg?1710728733",
+    "shikimori_id": 54275,
+    "source": "shikimori_season_search_ru"
+  },
+  "Osananajimi to wa Love Comedy ni Naranai": {
+    "rus": "Это не романтическая комедия с подругой детства",
+    "eng": "Osananajimi to wa Love Comedy ni Naranai",
+    "poster": "https://shikimori.one/assets/globals/missing_original.jpg",
+    "shikimori_id": 61359,
+    "source": "shikimori_season_search"
+  },
+  "Ao no Kanata no Four Rhythm": {
+    "rus": "Четыре ритма сквозь синеву: За небо, в небосвод",
+    "eng": "Ao no Kanata no Four Rhythm",
+    "poster": "https://shikimori.one/system/animes/original/28391.jpg?1711941589",
+    "shikimori_id": 28391,
+    "source": "shikimori_season_search_ru"
+  },
+  "Watashi no Oshi wa Akuyaku Reijou": {
+    "rus": "Я предпочитаю злодейку",
+    "eng": "Watashi no Oshi wa Akuyaku Reijou.",
+    "poster": "https://shikimori.one/system/animes/original/53833.jpg?1710729551",
+    "shikimori_id": 53833,
+    "source": "shikimori_season_search_ru"
+  },
+  "Shinchou Yuusha: Kono Yuusha ga Ore Tueee Kuse ni Shinchou Sugiru": {
+    "rus": "Осторожный герой: и без того сильнейший, он слишком осторожен!",
+    "eng": "Shinchou Yuusha: Kono Yuusha ga Ore Tueee Kuse ni Shinchou Sugiru",
+    "poster": "https://shikimori.one/system/animes/original/38659.jpg?1711973430",
+    "shikimori_id": 38659,
+    "source": "shikimori_season_search_ru"
   }
 }
