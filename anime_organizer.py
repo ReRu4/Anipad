@@ -4,7 +4,7 @@
 # 2. Связку сезонов, фильмов, OVA и спецвыпусков в единую франшизу без дубликатов
 # 3. Точный расчет размеров раздач в ГБ/МБ через встроенный Bencode парсер
 # 4. Выбор качества в карточках с указанием размера
-# 5. Интеграцию онлайн-поиска и раздач (AniLibria, RuTracker, Nyaa) для аниме из CSV без локальных файлов
+# 5. Интеграцию онлайн-поиска и релизов (AniLiberty, AnimeGO, Nyaa) для аниме из CSV без локальных файлов
 # 6. Динамическое переключение постеров сезонов и модальное окно с описанием и жанрами
 
 import os
@@ -259,7 +259,7 @@ def main():
     def get_metadata(title):
         if title in shiki_cache:
             s = shiki_cache[title]
-            return s.get('rus', title), s.get('eng', title), s.get('poster', ''), s.get('genres', []), s.get('description', ''), s.get('shikimori_id')
+            return s.get('rus', title), s.get('eng', title), s.get('poster', ''), s.get('genres', []), s.get('description', ''), s.get('shikimori_id'), None
         c = clean(title)
         if c in alib_lookup:
             rel = alib_lookup[c]
@@ -270,7 +270,8 @@ def main():
             genres = [g['name'] for g in rel.get('genres', []) if isinstance(g, dict) and g.get('name')]
             desc = rel.get('description', '')
             shiki_id = rel.get('shikimori', {}).get('id') if isinstance(rel.get('shikimori'), dict) else None
-            return rus, orig, poster, genres, desc, shiki_id
+            alias = rel.get('alias')
+            return rus, orig, poster, genres, desc, shiki_id, alias
         for k, rel in alib_lookup.items():
             if len(k) > 4 and len(c) > 4 and (k == c or k in c or c in k):
                 rus = rel.get('name', {}).get('main', '') or title
@@ -280,13 +281,14 @@ def main():
                 genres = [g['name'] for g in rel.get('genres', []) if isinstance(g, dict) and g.get('name')]
                 desc = rel.get('description', '')
                 shiki_id = rel.get('shikimori', {}).get('id') if isinstance(rel.get('shikimori'), dict) else None
-                return rus, orig, poster, genres, desc, shiki_id
-        return title, title, '', [], '', None
+                alias = rel.get('alias')
+                return rus, orig, poster, genres, desc, shiki_id, alias
+        return title, title, '', [], '', None, None
 
     def process_one_torrent(f):
         src_path = os.path.join(TORRENTS_DIR, f)
         t_title, ep, qual = parse_master_torrent(f)
-        rus_title, orig_title, poster_url, genres, desc, shiki_id = get_metadata(t_title)
+        rus_title, orig_title, poster_url, genres, desc, shiki_id, alias = get_metadata(t_title)
         
         hit = None
         for cand in [clean(rus_title), clean(orig_title), clean(t_title)]:
@@ -341,6 +343,8 @@ def main():
         elif '4k' in qual_lo: badge = "4K Ultra"
         else: badge = qual[:15] or "Стандарт"
         
+        clean_desc = re.sub(r'[\r\n\t]+', ' ', desc or '').strip()
+        
         return {
             'orig_file': f,
             'new_name': new_name,
@@ -357,8 +361,9 @@ def main():
             'size_str': size_str,
             'poster_url': poster_url,
             'genres': genres,
-            'description': desc,
-            'shikimori_id': shiki_id
+            'description': clean_desc,
+            'shikimori_id': shiki_id,
+            'alias': alias
         }
 
     with ThreadPoolExecutor(max_workers=24) as executor:
@@ -389,8 +394,10 @@ def main():
                 'genres': it['genres'],
                 'description': it['description'],
                 'shikimori_id': it['shikimori_id'],
+                'alias': it['alias'],
                 'seasons': {}
             }
+            
         fr = franchises[f_key]
         status_priority = {'Просмотрено': 5, 'Смотрю': 4, 'В планах': 3, 'Отложено': 2, 'Остальные торренты': 1}
         if status_priority.get(it['status'], 0) > status_priority.get(fr['status'], 0):
@@ -407,6 +414,8 @@ def main():
             fr['description'] = it['description']
         if not fr['shikimori_id'] and it['shikimori_id']:
             fr['shikimori_id'] = it['shikimori_id']
+        if not fr['alias'] and it['alias']:
+            fr['alias'] = it['alias']
             
         if s_label not in fr['seasons']:
             fr['seasons'][s_label] = {
@@ -419,14 +428,18 @@ def main():
                 'fallback_poster': it['poster_url'],
                 'genres': it['genres'],
                 'description': it['description'],
+                'alias': it['alias'],
                 'variants': []
             }
+            
         sn = fr['seasons'][s_label]
         if it['episodes'] and not sn['episodes']: sn['episodes'] = it['episodes']
         if not sn['poster'] and season_poster_rel: sn['poster'] = season_poster_rel
         if not sn['fallback_poster'] and it['poster_url']: sn['fallback_poster'] = it['poster_url']
         if not sn['genres'] and it['genres']: sn['genres'] = it['genres']
         if not sn['description'] and it['description']: sn['description'] = it['description']
+        if not sn['alias'] and it['alias']: sn['alias'] = it['alias']
+        
         sn['variants'].append({
             'filename': it['new_name'],
             'url': it['url'],
@@ -439,36 +452,43 @@ def main():
         })
 
     # Include missing seasons/anime from bookmarks
-    missing_count = 0
     for bm in anixart_bookmarks:
         f_key, f_rus, f_orig, s_label = get_franchise_info(bm['rus'], bm['orig'])
+        c_bm_orig = clean(bm['orig'])
+        c_bm_rus = clean(bm['rus'])
+        alias = None
+        if c_bm_orig in alib_lookup: alias = alib_lookup[c_bm_orig].get('alias')
+        elif c_bm_rus in alib_lookup: alias = alib_lookup[c_bm_rus].get('alias')
+        
+        aniliberty_url = f"https://aniliberty.top/anime/releases/release/{alias}" if alias else f"https://aniliberty.top"
         query_encoded = urllib.parse.quote(bm['rus'])
         nyaa_encoded = urllib.parse.quote(bm['orig'] or bm['rus'])
+        
         online_variants = [
             {
-                'filename': f"Поиск AniLibria: {bm['rus']}",
-                'url': f"https://anilibria.top/app/search?query={query_encoded}",
-                'quality': 'AniLibria / AniLiberty',
-                'badge': 'AniLibria',
+                'filename': f"Релиз на AniLiberty: {bm['rus']}",
+                'url': aniliberty_url,
+                'quality': 'AniLiberty / AniLibria (Официальный)',
+                'badge': 'AniLiberty',
                 'episodes': 'Онлайн',
                 'size_bytes': 0,
                 'size_str': 'Онлайн',
                 'source': 'online_anilibria'
             },
             {
-                'filename': f"Поиск RuTracker: {bm['rus']}",
-                'url': f"https://rutracker.org/forum/tracker.php?nm={query_encoded}",
-                'quality': 'RuTracker (Все озвучки)',
-                'badge': 'RuTracker',
+                'filename': f"Поиск AnimeGO: {bm['rus']}",
+                'url': f"https://animego.org/search/anime?q={query_encoded}",
+                'quality': 'AnimeGO (Смотреть / Все озвучки)',
+                'badge': 'AnimeGO',
                 'episodes': 'Онлайн',
                 'size_bytes': 0,
                 'size_str': 'Онлайн',
-                'source': 'online_rutracker'
+                'source': 'online_animego'
             },
             {
                 'filename': f"Поиск Nyaa: {bm['orig']}",
                 'url': f"https://nyaa.si/?f=0&c=1_2&q={nyaa_encoded}",
-                'quality': 'Nyaa (Все озвучки / RAW)',
+                'quality': 'Nyaa.si (Все озвучки / Multi-Sub)',
                 'badge': 'Nyaa.si',
                 'episodes': 'Онлайн',
                 'size_bytes': 0,
@@ -488,19 +508,18 @@ def main():
         desc = ""
         s_id = None
         
-        c = clean(bm['orig']) or clean(bm['rus'])
         if bm['orig'] in shiki_cache:
             s = shiki_cache[bm['orig']]
             online_p = s.get('poster', '')
             genres = s.get('genres', [])
-            desc = s.get('description', '')
+            desc = re.sub(r'[\r\n\t]+', ' ', s.get('description', '')).strip()
             s_id = s.get('shikimori_id')
-        elif c in alib_lookup:
-            rel = alib_lookup[c]
+        elif c_bm_orig in alib_lookup:
+            rel = alib_lookup[c_bm_orig]
             p = rel.get('poster', {}).get('src', '')
             if p: online_p = f"https://anilibria.top{p}" if not p.startswith('http') else p
             genres = [g['name'] for g in rel.get('genres', []) if isinstance(g, dict) and g.get('name')]
-            desc = rel.get('description', '')
+            desc = re.sub(r'[\r\n\t]+', ' ', rel.get('description', '')).strip()
             s_id = rel.get('shikimori', {}).get('id') if isinstance(rel.get('shikimori'), dict) else None
 
         if f_key not in franchises:
@@ -516,6 +535,7 @@ def main():
                 'genres': genres,
                 'description': desc,
                 'shikimori_id': s_id,
+                'alias': alias,
                 'seasons': {
                     s_label: {
                         'season_name': s_label,
@@ -527,11 +547,11 @@ def main():
                         'fallback_poster': online_p,
                         'genres': genres,
                         'description': desc,
+                        'alias': alias,
                         'variants': online_variants
                     }
                 }
             }
-            missing_count += 1
         else:
             fr = franchises[f_key]
             if s_label not in fr['seasons']:
@@ -545,10 +565,9 @@ def main():
                     'fallback_poster': online_p,
                     'genres': genres,
                     'description': desc,
+                    'alias': alias,
                     'variants': online_variants
                 }
-
-    print(f"   Добавлено аниме из закладок с онлайн-раздачами: {missing_count}")
 
     final_franchise_list = []
     for f_key, data in franchises.items():
@@ -560,8 +579,10 @@ def main():
             if 'фильм' in s_name.lower(): return (3, num)
             if 'ova' in s_name.lower() or 'ona' in s_name.lower(): return (4, num)
             return (5, num)
+            
         s_list = list(data['seasons'].values())
         s_list.sort(key=lambda s: season_sort_key(s['season_name']))
+        
         for s in s_list:
             s['variants'].sort(key=lambda v: (
                 0 if 'hevc' in v['quality'].lower() and '1080p' in v['quality'].lower() else
@@ -569,6 +590,7 @@ def main():
                 2 if '720p' in v['quality'].lower() else 3,
                 -v['size_bytes']
             ))
+            
         data['seasons'] = s_list
         final_franchise_list.append(data)
 
